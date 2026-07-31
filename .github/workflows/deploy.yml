@@ -1,0 +1,40 @@
+name: Deploy to Aruba FTP
+
+# Pipeline si attiva SOLO quando push sul branch "main"
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Download del codice dalla repository (main branch)
+    - name: Checkout del codice
+      uses: actions/checkout@v4
+
+    # Preparing environment with Node.js
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20' # Usa la versione di Node con cui stai sviluppando
+
+    # Installa le librerie e compila il sito Next.js
+    - name: Install dependencies & Build
+      run: |
+        npm ci
+        npm run build
+
+    # Caricamento via FTP
+    - name: Sync via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./out/
+        # Su Aruba, la root FTP è spesso la directory principale.
+        # Se i file vanno in una sottocartella --> cambiare '/' in '/nomecartella/'
+        server-dir: /
