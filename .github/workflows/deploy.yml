@@ -37,4 +37,4 @@ jobs:
         local-dir: ./out/
         # Su Aruba, la root FTP è spesso la directory principale.
         # Se i file vanno in una sottocartella --> cambiare '/' in '/nomecartella/'
-        server-dir: /
+        server-dir: /www.rivagames.info/
