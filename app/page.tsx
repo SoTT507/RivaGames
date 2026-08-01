@@ -51,11 +51,14 @@ export default function Home() {
               Ospiti Speciali
             </span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          {/* Griglia responsive: 1 colonna su mobile, 2 su tablet, 3 su desktop */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {eventData.guests.filter(g => g.featured).map((guest) => (
               <GuestCard key={guest.id} guest={guest} />
             ))}
           </div>
+          
         </div>
       </section>
 
