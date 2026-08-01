@@ -1,8 +1,8 @@
 export const eventData = {
   hero: {
     title: "Riva Games Festival 2026",
-    subtitle: "Tre giorni di cultura pop, esposizioni, musica, buona compagnia e molto altro.",
-    dates: "14 - 16 Novembre 2026",
+    subtitle: "",
+    dates: "14 - 16 Agosto 2026",
     location: "Riva del Garda, Centro città",
   },
   tickets: {
@@ -43,24 +43,43 @@ export const eventData = {
     {
       day: "Venerdì 14",
       events: [
-        { time: "10:00", title: "Apertura Fiera", location: "Ingresso Principale" },
-        { time: "15:00", title: "Panel: Il futuro del Retro-gaming", location: "Sala Main" }
+        { time: "18:00", title: "Apertura Fiera", location: "Ingresso Principale" },
+        { time: "18:00", title: "Area Food", location: "Piazza Cesare Battisti"  },
+        { time: "18:00", title: "Area Market & Espositori", location: "Piazza Cesare Battisti"  },
+        { time: "18:00", title: "Ludoteca con Ludimus e Busplay", location: "Palco Centrale" },
+        { time: "18:00", title: "Magic e TCG con Pauperwave", location: "Palco Centrale"  },
+        { time: "18:00", title: "DJ Set", location: "Piazza Cesare Battisti"  },
+        { time: "23:00", title: "Fine Primo Giorno", location: "Piazza Cesare Battisti"  }
       ]
     },
     {
       day: "Sabato 15",
       events: [
-        { time: "11:00", title: "Gara Cosplay Ufficiale", location: "Palco Centrale" },
-        { time: "14:30", title: "Workshop", location: "Sala Workshop B" },
-        { time: "18:00", title: "Concerto Chiptune: I Bit-Busters", location: "Area Esterna" }
+        { time: "10:00", title: "Apertura Secondo Giorno", location: "Palco Centrale" },
+        { time: "10:00", title: "Area Food", location: "Piazza Cesare Battisti"  },
+        { time: "10:00", title: "Area Market & Espositori", location: "Piazza Cesare Battisti"  },
+        { time: "10:00", title: "Mostra Dedicara a PK - Paperinik New Adventures", location: "Palco Centrale"  },
+        { time: "10:00", title: "Ludoteca con Ludimus e Busplay", location: "Palco Centrale" },
+        { time: "10:00", title: "Magic e TCG con Pauperwave", location: "Palco Centrale"  },
+        { time: "10:00", title: "DJ Set", location: "Piazza Cesare Battisti"  },
+        { time: "10:00 - 19:00", title: "Area Gaming con GamersArena", location: "Palco Centrale" },
+        { time: "15:00 - 19:00", title: "Workshop con Alessandro Sisti", location: "Palco Centrale"  },
+        { time: "23:00", title: "Fine Secondo Giorno", location: "Piazza Cesare Battisti"  }
       ]
     },
     {
       day: "Domenica 16",
       events: [
-        { time: "09:30", title: "Apertura Stand e Area Indie", location: "Padiglione A" },
-        { time: "14:00", title: "Torneo di Smash Bros (Premio: 1 Milione di stuzzicadenti)", location: "Area Gaming" },
-        { time: "19:00", title: "Chiusura Evento e Saluti", location: "Palco Centrale" }
+        { time: "10:00", title: "Apertura Terzo Giorno", location: "Palco Centrale" },
+        { time: "10:00 - 23:00", title: "Area Market & Espositori", location: "" },
+        { time: "10:00 - 17:30", title: "Area Food", location: "" },
+        { time: "10:00 - 17:30", title: "Area Gaming con GamersArena", location: "Padiglione A" },
+        { time: "10:00", title: "Ludoteca con Ludimus e Busaplay", location: "Area Gaming" },
+        { time: "10:00", title: "Magic e TCG con Pouperwave", location: "Palco Centrale" },
+        { time: "10:30", title: "Intervista & Talk con Alessandro Sisti", location: "Biblioteca Civica" },
+        { time: "15:00 - 19:00", title: "Paperninik New Adventures - Mostra dedicata a PK", location: "Biblioteca Civica" },
+        { time: "21:00", title: "Movie Night: Japan Fantasy - Evento conclusivo", location: "Rocca" },
+        { time: "23:00", title: "Fine Fiera", location: "Piazza Cesare Battisti"  }
       ]
     }
   ]
