@@ -58,9 +58,14 @@ export const eventData = {
     {
       day: "Domenica 16",
       events: [
-        { time: "09:30", title: "Apertura Stand e Area Indie", location: "Padiglione A" },
-        { time: "14:00", title: "Torneo di Smash Bros (Premio: 1 Milione di stuzzicadenti)", location: "Area Gaming" },
-        { time: "19:00", title: "Chiusura Evento e Saluti", location: "Palco Centrale" }
+        { time: "10:00 - 23:00", title: "Area Market & Espositori", location: "" },
+        { time: "10:00 - 17:30", title: "Area Food", location: "" },
+        { time: "10:00 - 17:30", title: "Area Gaming con GamersArena", location: "Padiglione A" },
+        { time: "10:00", title: "Ludoteca con Ludimus e Busaplay", location: "Area Gaming" },
+        { time: "10:00", title: "Magic e TCG con Pouperwave", location: "Palco Centrale" },
+        { time: "10:30", title: "Intervista & Talk con Alessandro Sisti", location: "Biblioteca Civica" },
+        { time: "15:00 - 19:00", title: "Paperninik New Adventures - Mostra dedicata a PK", location: "Biblioteca Civica" },
+        { time: "21:00", title: "Movie Night: Japan Fantasy - Evento conclusivo", location: "Rocca" }
       ]
     }
   ]
