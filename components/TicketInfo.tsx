@@ -8,18 +8,18 @@ type TicketProps = {
 export default function TicketInfo({ data }: TicketProps) {
   return (
     <div className="text-center">
-      <h2 className="text-4xl font-bold mb-6 text-white">Biglietti</h2>
-      <div className="inline-block bg-[#FECB33]/10 border border-[#FECB33]/50 text-[#FECB33] px-6 py-4 rounded-xl mb-12 max-w-2xl">
+      <h2 className="text-4xl font-bold mb-6 text-brand-text">Biglietti</h2>
+      <div className="inline-block bg-brand-accent-yellow/10 border border-brand-accent-yellow/50 text-brand-accent-yellow px-6 py-4 rounded-xl mb-12 max-w-2xl shadow-sm">
         <strong>Attenzione:</strong> {data.description}
       </div>
       <div className="grid sm:grid-cols-3 gap-6">
         {data.prices.map((ticket, idx) => (
           <div
             key={idx}
-            className="bg-[#3D4D4D] p-8 rounded-2xl border border-[#418080] hover:border-[#E86D43] transition-colors"
+            className="bg-brand-dark p-8 rounded-2xl border border-brand-border hover:border-brand-accent-orange transition-colors"
           >
-            <h3 className="text-lg text-gray-300 mb-2">{ticket.type}</h3>
-            <p className="text-4xl font-black text-white">{ticket.price}</p>
+            <h3 className="text-lg text-brand-text/70 mb-2">{ticket.type}</h3>
+            <p className="text-4xl font-black text-brand-text">{ticket.price}</p>
           </div>
         ))}
       </div>
