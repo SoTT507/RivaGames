@@ -9,7 +9,7 @@ export default function Home() {
       
       {/* 1. HERO SECTION */}
       <section className="relative h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#372020]/80 via-[#418080]/30 to-[#3D4D4D] z-0" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#3D4D4D]/80 via-[#418080]/30 to-[#3D4D4D] z-0" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#E86D43]/20 blur-[120px] rounded-full mix-blend-screen pointer-events-none" />
         
         <div className="relative z-10 max-w-4xl mx-auto">
@@ -20,10 +20,10 @@ export default function Home() {
             {eventData.hero.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-lg font-semibold">
-            <div className="flex items-center gap-2 bg-[#372020]/80 px-6 py-3 rounded-full border border-[#418080] backdrop-blur-md">
+            <div className="flex items-center gap-2 bg-[#3D4D4D]/80 px-6 py-3 rounded-full border border-[#418080] backdrop-blur-md">
               <span className="text-[#FECB33]">📅</span> {eventData.hero.dates}
             </div>
-            <div className="flex items-center gap-2 bg-[#372020]/80 px-6 py-3 rounded-full border border-[#418080] backdrop-blur-md">
+            <div className="flex items-center gap-2 bg-[#3D4D4D]/80 px-6 py-3 rounded-full border border-[#418080] backdrop-blur-md">
               <span className="text-[#E86D43]">📍</span> {eventData.hero.location}
             </div>
           </div>
@@ -31,7 +31,7 @@ export default function Home() {
       </section>
 
       {/* 2. BIGLIETTERIA */}
-      <section className="py-24 px-4 bg-[#372020] border-y border-[#418080]">
+      <section className="py-24 px-4 bg-[#3D4D4D] border-y border-[#418080]">
         <div className="max-w-5xl mx-auto">
           <TicketInfo data={eventData.tickets} />
         </div>
@@ -45,7 +45,7 @@ export default function Home() {
       </section>
 
       {/* 4. OSPITI */}
-      <section className="py-24 px-4 relative bg-[#372020] border-t border-[#418080]">
+      <section className="py-24 px-4 relative bg-[#3D4D4D] border-t border-[#418080]">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-white">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FECB33] to-[#E86D43]">

@@ -30,11 +30,11 @@ export default function GuestCard({ guest }: GuestProps) {
         
         {/* 1. FRONTE DELLA CARD */}
         <div 
-          className="absolute inset-0 w-full h-full bg-[#372020] rounded-3xl overflow-hidden border border-[#418080] group-hover:border-[#FECB33]/60 transition-colors"
+          className="absolute inset-0 w-full h-full bg-[#3D4D4D] rounded-3xl overflow-hidden border border-[#418080] group-hover:border-[#FECB33]/60 transition-colors"
           style={{ backfaceVisibility: "hidden" }}
         >
           <div className="absolute inset-0 bg-[#418080]">
-            <div className="absolute inset-0 bg-gradient-to-t from-[#3D4D4D] via-[#372020]/40 to-transparent z-10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#3D4D4D] via-[#3D4D4D]/40 to-transparent z-10" />
           </div>
           
           <div className="absolute bottom-0 left-0 w-full p-6 z-20">
@@ -63,7 +63,7 @@ export default function GuestCard({ guest }: GuestProps) {
           }}
         >
           <div className="w-full flex flex-col h-full justify-center">
-            <h3 className="text-2xl font-bold text-white mb-4 border-b border-[#372020] pb-4">
+            <h3 className="text-2xl font-bold text-white mb-4 border-b border-[#3D4D4D] pb-4">
               {guest.name}
             </h3>
             
@@ -72,7 +72,7 @@ export default function GuestCard({ guest }: GuestProps) {
             </p>
             
             <div className="mt-auto">
-              <span className="text-xs text-white uppercase tracking-widest border border-[#372020] px-4 py-2 rounded-full hover:bg-[#E86D43] hover:border-[#E86D43] transition-colors">
+              <span className="text-xs text-white uppercase tracking-widest border border-[#3D4D4D] px-4 py-2 rounded-full hover:bg-[#E86D43] hover:border-[#E86D43] transition-colors">
                 Torna Indietro
               </span>
             </div>
