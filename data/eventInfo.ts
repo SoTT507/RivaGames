@@ -3,7 +3,7 @@ export const eventData = {
     title: "Riva Games Festival 2026",
     subtitle: "",
     dates: "14 - 16 Agosto 2026",
-    location: "Riva del Garda, Centro città",
+    location: "Riva del Garda, Piazza Battisti",
   },
   tickets: {
     description: "I biglietti sono acquistabili esclusivamente presso le casse in loco. Prezzi soggetti a fluttuazioni quantistiche.",

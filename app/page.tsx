@@ -1,3 +1,4 @@
+import Immagine from "next/image";
 import { eventData } from "@/data/eventInfo";
 import GuestCard from "@/components/GuestCard";
 import TicketInfo from "@/components/TicketInfo";
@@ -9,12 +10,29 @@ export default function Home() {
       
       {/* 1. HERO SECTION */}
       <section className="relative h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Immagine 
+            src="/immagini/illustrazione_locandina_RGF.PNG"
+            alt="Sfondo evento"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            quality={85}
+            />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/20 via-purple-900/20 to-slate-950 z-0" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-fuchsia-600/20 blur-[120px] rounded-full mix-blend-screen pointer-events-none" />
         <div className="relative z-10 max-w-4xl mx-auto">
-          <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-cyan-400 mb-6 drop-shadow-lg">
+          {/*<h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-cyan-400 mb-6 drop-shadow-lg">
             {eventData.hero.title}
-          </h1>
+          </h1>*/}
+          <div className="flex justify-center mb-4 sm:mb-6">
+            <img
+              src="/immagini/LOGO_NERO.PNG"
+              alt={eventData.hero.title}
+              className="w-[280px] sm:w-[400px} md:w-[500px] lg:w-[600px] h-auto object-contain"
+            />
+          </div>
           <p className="text-xl md:text-2xl text-slate-300 font-medium mb-8">
             {eventData.hero.subtitle}
           </p>
