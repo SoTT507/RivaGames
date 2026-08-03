@@ -3,7 +3,7 @@ export const eventData = {
     title: "Riva Games Festival 2026",
     subtitle: "",
     dates: "14 - 16 Agosto 2026",
-    location: "Piazza Battisti, Riva del Garda, TN",
+    location: "Piazza Cesare Battisti, R.d.G.",
   },
   tickets: {
     description: "Solo per Movie Night: Japan Fantasy - Evento conclusivo",
