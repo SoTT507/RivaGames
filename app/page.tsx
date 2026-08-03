@@ -13,7 +13,7 @@ export default function Home() {
         
         <div className="absolute inset-0 z-0">
           <Immagine 
-            src="/immagini/illustrazione_locandina_RGF.png"
+            src="/immagini/illustrazione_locandina_RGF.webp"
             alt="Sfondo evento"
             fill
             className="object-cover"
@@ -28,7 +28,7 @@ export default function Home() {
         <div className="relative z-10 max-w-4xl mx-auto">
           <div className="flex justify-center mb-4 sm:mb-6">
             <img
-              src="/immagini/LOGO_NERO.png"
+              src="/immagini/logo_nero.png"
               alt={eventData.hero.title}
               className="w-[280px] sm:w-[400px] md:w-[500px] lg:w-[600px] h-auto object-contain drop-shadow-xl"
             />
@@ -49,17 +49,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. BIGLIETTERIA */}
-      <section className="py-24 px-4 bg-brand-surface border-y border-brand-border">
-        <div className="max-w-5xl mx-auto">
-          <TicketInfo data={eventData.tickets} />
-        </div>
-      </section>
-
       {/* 3. PROGRAMMA */}
       <section className="py-24 px-4 relative bg-brand-dark">
         <div className="max-w-6xl mx-auto">
            <Schedule />
+        </div>
+      </section>
+
+      {/* 2. BIGLIETTERIA */}
+      <section className="py-24 px-4 bg-brand-surface border-y border-brand-border">
+        <div className="max-w-5xl mx-auto">
+          <TicketInfo data={eventData.tickets} />
         </div>
       </section>
 
@@ -68,7 +68,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-brand-text">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent-yellow to-brand-accent-orange">
-              Ospiti Speciali
+              Featuring
             </span>
           </h2>
           
@@ -79,6 +79,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      
 
       {/* FOOTER */}
       <footer className="py-8 text-center text-brand-accent-yellow/80 text-sm border-t border-brand-border bg-brand-dark">

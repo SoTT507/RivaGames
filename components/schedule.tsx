@@ -30,6 +30,16 @@ export default function Schedule() {
           </button>
         ))}
       </div>
+
+      {/* Testo "Clicca per info" centrato */}
+      <div className="flex justify-center w-full mb-8">
+        <p className="text-brand-text/70 text-xs md:text-sm flex items-center gap-2 opacity-70 transition-opacity">
+          <span>Clicca per info</span>
+          <svg className="w-3 h-3 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+          </svg>
+        </p>
+      </div>
       
       <div className="max-w-4xl mx-auto space-y-4">
         {currentSchedule?.events.map((event, index) => (
