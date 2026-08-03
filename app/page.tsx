@@ -19,6 +19,7 @@ export default function Home() {
             className="object-cover"
             sizes="100vw"
             quality={85}
+            loading="eager"
           />
         </div>
         
@@ -54,12 +55,31 @@ export default function Home() {
       </div>
       </section>
 
-      {/* 3. PROGRAMMA */}
-      <section className="py-24 px-4 relative bg-brand-dark">
-        <div className="max-w-6xl mx-auto">
-           <Schedule />
+<section className="py-4 sm:py-6 px-2 bg-white border-y border-gray-200">
+  <div className="max-w-7xl mx-auto">
+    <h3 className="text-center text-gray-400 text-[10px] sm:text-xs uppercase tracking-widest mb-2 sm:mb-3 font-semibold">
+      I nostri Sponsor
+    </h3>
+    
+    <div className="flex flex-wrap justify-center items-center gap-x-6 sm:gap-x-8 md:gap-x-12 gap-y-4 sm:gap-y-6">
+      {eventData.sponsors.map((sponsor) => (
+        <div 
+          key={sponsor.id}
+          className="flex items-center justify-center hover:scale-105 transition-all duration-300"
+        >
+          <Immagine
+            src={sponsor.logo}
+            alt={sponsor.name}
+            width={100}
+            height={50}
+            className="object-contain h-8 sm:h-10 md:h-12 w-auto"
+          />
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* 2. BIGLIETTERIA */}
       <section className="py-24 px-4 bg-brand-surface border-y border-brand-border">
@@ -67,6 +87,13 @@ export default function Home() {
           <TicketInfo data={eventData.tickets} />
         </div>
       </section>
+
+      {/* 3. PROGRAMMA */}
+      <section className="py-24 px-4 relative bg-brand-dark">
+        <div className="max-w-6xl mx-auto">
+           <Schedule />
+        </div>
+      </section>      
 
       {/* 4. OSPITI */}
       <section className="py-24 px-4 relative bg-brand-surface border-t border-brand-border">
