@@ -37,16 +37,21 @@ export default function Home() {
           <p className="text-xl md:text-2xl text-brand-text/90 font-medium mb-8 drop-shadow-md">
             {eventData.hero.subtitle}
           </p>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-lg font-semibold">
-            <div className="flex items-center gap-2 bg-brand-surface/80 px-6 py-3 rounded-full border border-brand-border backdrop-blur-md shadow-lg">
-              <span className="text-brand-accent-yellow">📅</span> {eventData.hero.dates}
-            </div>
-            <div className="flex items-center gap-2 bg-brand-surface/80 px-6 py-3 rounded-full border border-brand-border backdrop-blur-md shadow-lg">
-              <span className="text-brand-accent-orange">📍</span> {eventData.hero.location}
-            </div>
+                    
+          {/* MODIFICATO: gap-3 su mobile, sm:gap-4 da tablet in su. text-sm su mobile, sm:text-lg da tablet in su */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 text-sm sm:text-lg font-semibold">
+                      
+          {/* MODIFICATO: px-4 py-2 su mobile, sm:px-6 sm:py-3 da tablet in su */}
+          <div className="flex items-center gap-2 bg-brand-surface/80 px-4 py-2 sm:px-6 sm:py-3 rounded-full border border-brand-border backdrop-blur-md shadow-lg">
+            <span className="text-brand-accent-yellow">📅</span> {eventData.hero.dates}
           </div>
+                      
+          {/* MODIFICATO: px-4 py-2 su mobile, sm:px-6 sm:py-3 da tablet in su */}
+          <div className="flex items-center gap-2 bg-brand-surface/80 px-4 py-2 sm:px-6 sm:py-3 rounded-full border border-brand-border backdrop-blur-md shadow-lg text-center">
+            <span className="text-brand-accent-orange">📍</span> {eventData.hero.location}
+          </div>            
         </div>
+      </div>
       </section>
 
       {/* 3. PROGRAMMA */}

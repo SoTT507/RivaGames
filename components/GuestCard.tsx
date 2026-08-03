@@ -27,48 +27,57 @@ export default function GuestCard({ guest }: GuestProps) {
     if (!container || !text) return;
 
     const fixOverflow = () => {
-      // 1. Resettiamo gli stili inline per ricalcolare da zero
+      // Resetta le dimensioni per testare la grandezza base (1.5rem da globals.css)
       text.style.fontSize = "";
       text.style.lineHeight = "";
       
-      // Forza il browser a eseguire un "reflow" per leggere le dimensioni reali
-      void container.offsetHeight;
+      // requestAnimationFrame assicura che il DOM abbia applicato il reset 
+      // prima di misurare le altezze
+      requestAnimationFrame(() => {
+        // Selettore di sicurezza: se per colpa del 3D il contenitore 
+        // risulta alto 0px, fermiamo tutto per non rimpicciolire a caso
+        if (container.clientHeight === 0) return;
 
-      // 2. Se il testo sborda, iniziamo a rimpicciolirlo
-      if (container.scrollHeight > container.clientHeight) {
-        let currentSize = parseFloat(window.getComputedStyle(text).fontSize);
-        
-        // 3. Riduciamo gradualmente (limite abbassato a 8px per il mobile)
-        while (container.scrollHeight > container.clientHeight && currentSize > 8) {
-          currentSize -= 0.5;
-          text.style.fontSize = `${currentSize}px`;
+        // Se l'altezza totale del testo supera lo spazio visibile del contenitore
+        if (text.scrollHeight > container.clientHeight) {
+          let currentSize = parseFloat(window.getComputedStyle(text).fontSize);
           
-          if (currentSize < 12) {
-            text.style.lineHeight = "1.2";
+          // Riduciamo finché non entra, limite minimo 10px
+          while (text.scrollHeight > container.clientHeight && currentSize > 10) {
+            currentSize -= 0.5;
+            text.style.fontSize = `${currentSize}px`;
+            
+            if (currentSize < 14) {
+              text.style.lineHeight = "1.2";
+            }
           }
         }
-      }
+      });
     };
 
     let isMounted = true;
 
-    // Attendiamo il caricamento del font Forced Square per misurazioni precise
     document.fonts.ready.then(() => {
       if (isMounted) fixOverflow();
     });
 
-    // Usiamo ResizeObserver: è molto più affidabile su mobile rispetto a window.resize
     const resizeObserver = new ResizeObserver(() => {
       if (isMounted) fixOverflow();
     });
 
     resizeObserver.observe(container);
 
+    // Un trick extra: quando la carta viene cliccata e si gira, il browser 
+    // aggiorna le dimensioni reali. Lanciamo un ricalcolo di sicurezza.
+    if (isFlipped) {
+      setTimeout(fixOverflow, 100);
+    }
+
     return () => {
       isMounted = false;
       resizeObserver.disconnect();
     };
-  }, [guest.description]); 
+  }, [guest.description, isFlipped]); 
 
   return (
     <div 
@@ -136,9 +145,9 @@ export default function GuestCard({ guest }: GuestProps) {
               {guest.name}
             </h3>
             
-            {/* Blocco rigorosamente lo sbordamento con overflow-hidden */}
-            <div ref={containerRef} className="flex-1 min-h-0 overflow-hidden pr-3 mb-4">
-              <p ref={textRef} className="text-brand-text/90 text-xs md:text-sm leading-relaxed whitespace-pre-wrap break-words text-justify transition-all duration-200">
+            {/* Rimosso flex e items-center per permettere al testo di allinearsi naturalmente in alto */}
+            <div ref={containerRef} className="flex-1 min-h-0 overflow-hidden pr-1 mb-4">
+              <p ref={textRef} className="text-brand-text/90 leading-relaxed whitespace-pre-wrap break-words text-justify w-full">
                 {guest.description}
               </p>
             </div>
