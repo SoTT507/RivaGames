@@ -24,6 +24,15 @@ export const eventData = {
     },
     {
       id: "g2",
+      name: "Corpo Bandistico di Riva del Garda",
+      role: "Organizzatrice del Riva Games Festival",
+      image: "/immagini/guests/banda_riva/banda_riva_w.jpg",
+      description: "Da sempre impegnato nella promozione della musica in città, il Corpo Bandistico porta avanti progetti dedicati al rapporto tra musica, cinema, videogiochi e cultura pop, portando sul palco colonne sonore e grandi temi della cultura contemporanea, coinvolgendo musicisti di diverse generazioni e proponendo iniziative rivolte alla comunità.",
+      featured: true,
+      showFrontText: true,
+    },
+    {
+      id: "g3",
       name: "Busaplay",
       role: "",
       image: "/immagini/guests/busaplay/LogoBusaplay/PNG/BusaPlay_Logo_3.png",
@@ -32,7 +41,7 @@ export const eventData = {
       showFrontText: false,
     },
     {
-      id: "g3",
+      id: "g4",
       name: "Ludimus",
       role: "Robotics Expert",
       image: "/immagini/guests/ludimus.svg",
@@ -41,7 +50,7 @@ export const eventData = {
       showFrontText: false,
     },
     {
-      id: "g4",
+      id: "g5",
       name: "Cosplay and Nerd",
       role: "",
       image: "/immagini/guests/cosplay_and_nerd.jpg",
@@ -49,15 +58,7 @@ export const eventData = {
       featured: true,
       showFrontText: false,
     },
-    {
-      id: "g5",
-      name: "Banda Riva ",
-      role: "Organizzatrice del Riva Games Festival",
-      image: "/immagini/guests/banda_riva/banda_riva_w.jpg",
-      description: "Dettagli in arrivo...",
-      featured: true,
-      showFrontText: true,
-    },
+    
   ],
   schedule: [
     {
