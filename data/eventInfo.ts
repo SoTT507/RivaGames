@@ -48,7 +48,16 @@ export const eventData = {
       description: "Dettagli in arrivo...",
       featured: true,
       showFrontText: false,
-    }
+    },
+    {
+      id: "g5",
+      name: "Banda Riva ",
+      role: "Organizzatrice del Riva Games Festival",
+      image: "",
+      description: "Dettagli in arrivo...",
+      featured: true,
+      showFrontText: false,
+    },
   ],
   schedule: [
     {
