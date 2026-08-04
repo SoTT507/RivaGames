@@ -92,7 +92,7 @@ export default function Schedule() {
               {selectedEvent.description ? (
                 <p>{selectedEvent.description}</p>
               ) : (
-                <p className="italic text-brand-text/50">Maggiori dettagli in arrivo...</p>
+                <p className="italic text-brand-text/50" style={{ whiteSpace: 'pre-wrap' }}>{selectedEvent.indic}</p>
               )}
             </div>
           </div>
