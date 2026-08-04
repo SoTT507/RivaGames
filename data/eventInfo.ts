@@ -53,7 +53,7 @@ export const eventData = {
       id: "g5",
       name: "Banda Riva ",
       role: "Organizzatrice del Riva Games Festival",
-      image: "/immagini/guests/banda_riva/banda_riva.jpg",
+      image: "/immagini/guests/banda_riva/banda_riva_w.jpg",
       description: "Dettagli in arrivo...",
       featured: true,
       showFrontText: true,
