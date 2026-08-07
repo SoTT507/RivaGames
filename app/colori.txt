@@ -1,0 +1,8 @@
+/* Vecchi colori*/
+  --color-brand-dark: #162e2e;        /* Nuovo sfondo principale più scuro */
+  --color-brand-surface: #234848;     /* Sfondo per le card e le sezioni alternate */
+  --color-brand-border: #438787;      /* Bordi (il tuo vecchio colore di sfondo) */
+  --color-brand-accent-yellow: #FECB33; /* Giallo per icone e testi primari */
+  --color-brand-accent-orange: #E86D43; /* Arancio per pulsanti e testi secondari */
+  --color-brand-text: #FDF5D3;        /* Colore del testo generale (bianco sporco/crema) */
+  
