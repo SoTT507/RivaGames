@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { eventData } from "@/data/eventInfo";
+import Highlights from "@/components/Highlights";
 
 export default function Schedule() {
   const [activeDay, setActiveDay] = useState(eventData.schedule[0].day);
@@ -14,7 +15,7 @@ export default function Schedule() {
           Programma Eventi
         </span>
       </h2>
-      
+
       <div className="flex flex-wrap justify-center gap-2 mb-10">
         {eventData.schedule.map((scheduleDay) => (
           <button
@@ -35,29 +36,50 @@ export default function Schedule() {
       <div className="flex justify-center w-full mb-8">
         <p className="text-brand-text/70 text-xs md:text-sm flex items-center gap-2 opacity-70 transition-opacity">
           <span>Clicca per info</span>
-          <svg className="w-3 h-3 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+          <svg
+            className="w-3 h-3 md:w-4 md:h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
+            />
           </svg>
         </p>
       </div>
-      
+
       <div className="max-w-4xl mx-auto space-y-4">
         {currentSchedule?.events.map((event, index) => (
           <div
             key={index}
             onClick={() => setSelectedEvent(event)}
-            className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-6 bg-brand-surface/80 border border-brand-border p-6 rounded-2xl hover:bg-brand-border transition-colors cursor-pointer"
+            className="group relative flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-6 border border-brand-border p-6 rounded-2xl hover:border-brand-accent-orange transition-colors cursor-pointer overflow-hidden shadow-sm"
           >
-            <div className="flex-grow">
-              <h3 className="text-xl font-bold text-brand-text mb-1">
+            {/* LAYER 1: SFONDO BASE (Morbido, per riposare gli occhi) */}
+            <div className="absolute inset-0 bg-brand-surface z-0 transition-colors" />
+
+            {/* LAYER 2: GRADIENTE OBLIQUO INVERTITO (Da destra verso sinistra) */}
+            {/* Il lato destro scuro (brand-dark) garantisce il massimo contrasto per il testo giallo, degradando dolcemente verso sinistra */}
+            <div className="absolute inset-0 w-full h-full bg-[linear-gradient(285deg,var(--color-brand-dark)_30%,var(--color-brand-surface)_70%)] z-0 opacity-95 group-hover:opacity-100 transition-opacity" />
+
+            {/* CONTENUTO (Titolo e Luogo) */}
+            <div className="flex-grow relative z-10">
+              <h3 className="text-xl md:text-2xl font-bold text-brand-text mb-1 drop-shadow-md">
                 {event.title}
               </h3>
               <p className="text-sm text-brand-text/70 flex items-center gap-2">
-                <span className="text-brand-accent-orange">📍</span> {event.location}
+                <span className="text-brand-accent-orange">📍</span>{" "}
+                {event.location}
               </p>
             </div>
-            
-            <div className="flex-shrink-0 text-2xl font-black text-brand-accent-yellow text-left sm:text-right mt-2 sm:mt-0">
+
+            {/* ORARIO (A destra, sul colore scuro ad alto contrasto) */}
+            <div className="flex-shrink-0 text-2xl font-black text-brand-accent-yellow text-left sm:text-right mt-2 sm:mt-0 relative z-10">
               {event.time}
             </div>
           </div>
@@ -69,32 +91,106 @@ export default function Schedule() {
         )}
       </div>
 
+      {/* MODAL / POPUP EVENTO */}
       {selectedEvent && (
-        <div 
+        <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-brand-dark/80 backdrop-blur-md p-4"
           onClick={() => setSelectedEvent(null)}
         >
-          <div 
-            className="bg-brand-surface border border-brand-accent-orange p-8 rounded-3xl max-w-lg w-full shadow-2xl relative"
+          <div
+            className="bg-brand-surface border border-brand-accent-orange p-6 sm:p-8 rounded-[2.5rem] md:rounded-3xl w-[92vw] h-[92vh] max-w-sm md:max-w-2xl lg:max-w-3xl md:h-[85vh] shadow-2xl relative flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
-            <button 
+            {/* Pulsante di chiusura (X) */}
+            <button
               onClick={() => setSelectedEvent(null)}
-              className="absolute top-5 right-5 text-brand-text/50 hover:text-brand-text transition-colors text-2xl"
+              className="absolute top-4 right-5 md:top-6 md:right-6 text-brand-text/50 hover:text-brand-text transition-colors text-3xl font-black z-10 leading-none"
+              aria-label="Chiudi popup"
             >
-              ✕
+              &times;
             </button>
-            
-            <h3 className="text-3xl font-bold text-brand-text mb-1 pr-6">{selectedEvent.title}</h3>
-            <p className="text-xl font-black text-brand-accent-yellow mb-6">{selectedEvent.time}</p>
-            
-            <div className="text-brand-text/90 leading-relaxed">
-              {selectedEvent.description ? (
-                <p>{selectedEvent.description}</p>
-              ) : (
-                <p className="italic text-brand-text/50" style={{ whiteSpace: 'pre-wrap' }}>{selectedEvent.indic}</p>
-              )}
+
+            {/* Contenuto testuale scrollabile */}
+            <div className="flex-1 overflow-y-auto pr-2 mt-4 md:mt-0">
+              <h3 className="text-2xl md:text-3xl font-bold text-brand-text mb-1 pr-6">
+                {selectedEvent.title}
+              </h3>
+
+              {/* QUI AGGIUNGIAMO IL GIORNO PRIMA DELL'ORA */}
+              <p className="text-xl font-black text-brand-accent-yellow mb-6">
+                {activeDay} | {selectedEvent.time}
+              </p>
+
+              {/* Contenuto della descrizione ingrandito */}
+              <div className="text-brand-text/90 leading-loose text-base md:text-lg lg:text-xl mt-4">
+                {selectedEvent.description ? (
+                  <p>{selectedEvent.description}</p>
+                ) : (
+                  <p
+                    className="italic text-brand-text/50"
+                    style={{ whiteSpace: "pre-wrap" }}
+                  >
+                    {selectedEvent.indic}
+                  </p>
+                )}
+              </div>
             </div>
+
+            {/* Griglia bottoni di collegamento (Max 2 per riga) */}
+            {selectedEvent.references &&
+              selectedEvent.references.length > 0 && (
+                <div className="mt-4 pt-4 border-t border-brand-border/50 shrink-0">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+                    {selectedEvent.references.map((ref, idx) => {
+                      // CASO 1: Il bottone punta a un altro evento
+                      if (ref.targetEventId) {
+                        return (
+                          <button
+                            key={idx}
+                            onClick={() => {
+                              let target = null;
+                              for (const day of eventData.schedule) {
+                                const found = day.events.find(
+                                  (e) => e.id === ref.targetEventId,
+                                );
+                                if (found) {
+                                  target = found;
+                                  setActiveDay(day.day);
+                                  break;
+                                }
+                              }
+                              if (target) {
+                                setSelectedEvent(target);
+                              }
+                            }}
+                            className="flex items-center justify-center bg-brand-accent-orange text-brand-dark py-3 px-4 rounded-xl font-bold hover:bg-brand-accent-yellow transition-colors shadow-md text-sm md:text-base text-center w-full"
+                          >
+                            {ref.title}
+                          </button>
+                        );
+                      }
+
+                      // CASO 2: Il bottone è un normale link (URL)
+                      if (ref.url) {
+                        const isExternal = ref.url.startsWith("http");
+                        return (
+                          <a
+                            key={idx}
+                            href={ref.url}
+                            target={isExternal ? "_blank" : "_self"}
+                            rel={isExternal ? "noopener noreferrer" : ""}
+                            className="flex items-center justify-center bg-brand-accent-orange text-brand-dark py-3 px-4 rounded-xl font-bold hover:bg-brand-accent-yellow transition-colors shadow-md text-sm md:text-base text-center w-full"
+                          >
+                            {ref.title}
+                          </a>
+                        );
+                      }
+
+                      return null;
+                    })}
+                  </div>
+                </div>
+              )}
           </div>
         </div>
       )}

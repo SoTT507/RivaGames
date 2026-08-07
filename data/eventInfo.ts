@@ -1,3 +1,22 @@
+import { time } from "node:console";
+import { title } from "node:process";
+
+export type EventReference = {
+  title: string;
+  url?: string;
+  targetEventId?: string;   
+};
+
+export type ScheduleEvent = {
+  id?: string;
+  time: string;
+  title: string;
+  location: string;
+  indic: string;
+  description?: string;
+  references?: EventReference[];
+};
+
 export const eventData = {
   hero: {
     title: "Riva Games Festival 2026",
@@ -5,14 +24,50 @@ export const eventData = {
     dates: "14 - 16 Agosto 2026",
     location: "Piazza Cesare Battisti, R.d.G.",
   },
-  tickets: {
-    description: "Solo per Movie Night: Japan Fantasy - Evento conclusivo",
-    prices: [
-      { type: "Biglietto intero", price: "15,00 €" },
-      { type: "Biglietto ridotto under 18", price: "10,00 €" },
-      { type: "Biglietto soci e correntisti cassa rurale altogarda rovereto", price: "1,00 €" },
-    ]
-  },
+  highlightedEvents: [
+      "torneo-pauper",
+      "masterclass-sisti",
+      "movie-night-japan"
+    ],
+    tickets: [
+        {
+          eventTitle: "Movie Night: Japan Fantasy",
+          description: "Evento conclusivo. I posti sono limitati, si consiglia la prevendita online.",
+          prices: [
+            { 
+              type: "Biglietto intero", 
+              price: "15,00 €", 
+              onlineLink: "", 
+              onSite: true 
+            },
+            { 
+              type: "Biglietto ridotto under 18", 
+              price: "10,00 €", 
+              onlineLink: "", 
+              onSite: true 
+            },
+            { 
+              type: "Soci Cassa Rurale Altogarda", 
+              price: "1,00 €", 
+              onSite: true 
+            },
+          ]
+        },
+        {
+          eventTitle: "Dentro La Storia - Masterclass",
+          description: "Masterclass di sceneggiatura con Alessandro Sisti. Accesso consentito solo con prenotazione tramite form (vedi specifica evento).",
+          prices: [
+            { 
+              type: "Iscrizione Masterclass", 
+              price: "15,00 €", 
+              onlineLink: "#", 
+              onSite: true // Solo online per gestire i posti limitati
+            }
+          ]
+        }
+      ],
+
+  
 
   sponsors: [
     { id: 1, name: "Provincia Trento", logo: "/immagini/loghi/Logo_Provincia_Autonoma_Trento.png" },
@@ -77,28 +132,68 @@ export const eventData = {
       day: "Venerdì 14",
       events: [
         { time: "18:00", title: "Apertura Fiera", location: "Ingresso Principale", indic: "Inizio Serata"},
-        { time: "18:00", title: "Area Food", location: "Piazza Cesare Battisti", indic: "Tante delizie tra cui scegliere."  },
-        { time: "18:00", title: "Area Market & Espositori", location: "Piazza Cesare Battisti", indic: "Allestiti per tutta la piazza e nel giardino della Rocca."  },
-        { time: "18:00", title: "DJ Set", location: "Piazza Cesare Battisti", indic: "Musica dal vivo con DJ Giuspe."  },
-        { time: "18:00", title: "Ludoteca con Ludimus e Busaplay", location: "Palco Centrale", indic: "Giochi da tavolo in compagnia." },
-        { time: "18:00", title: "TCG con Pauperwave", location: "Palco Centrale", indic: "Magic, pokemon?, e tanto altro."  },
-        { time: "23:00", title: "Fine Primo Giorno", location: "Piazza Cesare Battisti", indic: "Chiusura primo giorno della Fiera."  }
+        { time: "18:00 - 23:00", title: "Ludoteca con Ludimus, Busaplay e Othello", location: "Piazza Cesare Battisti", indic: "Ludoteca e giochi da tavolo in compagnia, organizzato da Ludimus, Busaplay e Othello." },
+        { time: "18:00 - 23:00", title: "Magic e TCG con LabTale", location: "Piazza Cesare Battisti", indic: "Tavoli dimostrativi e prova gratuita di numerosi giochi di carte.",
+          references: [
+            { title: "Vedi Torneo di Sabato", targetEventId: "torneo-pauper" },
+          ],
+        },
+        { time: "18:00 - 23:00", title: "DJ Set con DJ Giuspe", location: "Piazza Cesare Battisti", indic: "DJ Set in Piazza Cesare Battisti con DJ Giuspe."  },
+        { time: "23:00", title: "Fine Primo Giorno", location: "Piazza Cesare Battisti", indic: "Chiusura primo giorno della Fiera."}
       ]
     },
     {
       day: "Sabato 15",
       events: [
-        { time: "10:00", title: "Apertura Secondo Giorno", location: "Palco Centrale", indic: "Apertura dei cancelli della Fiera." },
-        { time: "10:00", title: "Area Food", location: "Piazza Cesare Battisti", indic: "Tante delizie tra cui scegliere."  },
-        { time: "10:00", title: "Area Market & Espositori", location: "Piazza Cesare Battisti", indic: "Allestiti per tutta la piazza e nel giardino della Rocca."  },
-        { time: "10:00", title: "DJ Set", location: "Piazza Cesare Battisti", indic: "Musica dal vivo con DJ Giuspe."  },
-        { time: "10:00 - 19:00", title: "Ludoteca con Ludimus e Busaplay", location: "Palco Centrale", indic: "Giochi da tavolo in compagnia." },
-        { time: "10:00 - 19:00", title: "TCG con Pauperwave", location: "Palco Centrale", indic: "Toreno Commander Magic, 4 turni con premiazione finale: ore 11:00"  },        
-        { time: "10:00 - 19:00", title: "Area Gaming con GamersArena", location: "Palco Centrale", indic: "Tornei di Mario Kart e Fifa e Giri nel simulatore F1." },
-        { time: "10:00", title: "Mostra Dedicata a PK", location: "Palco Centrale", indic: "Dedicata alla serie PK: meno uno all'alba"  },        
-        { time: "14:30 - 19:00", title: "Dentro La Storia", location: "Palco Centrale", indic: "Masterclass di sceneggiatura per fumetti con Alessandro Sisti. Richiesta iscrizione."  },
-        { time: "20:00 - 23.00", title: "D&D in notturna", location: "Piazza Cesare Battisti", indic: "Sessione di D&D serale con Busaplay"  },
-        { time: "23:00", title: "Fine Secondo Giorno", location: "Piazza Cesare Battisti", indic: "Chiusura secondo giorno della Fiera."  }
+        { time: "10:00", title: "Apertura Secondo Giorno", location: "Palco Centrale", indic: "Apertura dei cancelli della Fiera.",
+          references: [],
+        },
+        { time: "10:00", title: "Mostra Dedicata a PK", location: "Biblioteca Civica", indic: "Dedicata alla serie di Paperinik arriva la mostra \"PK - Meno uno all'alba\"",
+          references: [],
+        },
+        { time: "10:00 - 19:00", title: "Area Gaming con GamersArena", location: "Piazza Cesare Battisti", 
+          indic: "• Tornei di Mario Kart \n• Tornei di Fifa \n• Hotlap al simulatore F1.",
+          references: [
+            { title: "Iscrizione Torneo Mario Kart", url: "#" },
+            { title: "Iscrizione Torneo Fifa", url: "#" },
+          ],
+        },
+        { time: "10:00 - 19:00", title: "Ludoteca con Ludimus, Busaplay e Othello", location: "Piazza Cesare Battisti", 
+          indic: "Ludoteca e giochi da tavolo in compagnia, organizzato da Ludimus, Busaplay e Othello.",
+          references: [],
+        },
+        { time: "10:00 - 17:30", title: "Magic e TCG con LabTale", location: "Palco Centrale", 
+          indic: "• Magic - Toreno Pauper con premiazione - Ore 11:00 \n• Tavoli dimostrativi \n• Prova gratuita di numerosi giochi di carte",
+          references: [
+            { title: "Vedi Torneo Pauper", targetEventId: "torneo-pauper" },
+          ],
+        },
+        { id: "torneo-pauper", time: "11:00", title: "Torneo Commander - Magic", location: "Piazza Cesare Battisti", 
+          indic: "Torneo Pauper con premiazione - ore 11:00",
+          references: [
+            { title: "Iscrizione Torneo Pauper", url: "#" },
+          ],
+        },
+        { 
+          id: "masterclass-sisti",
+          time: "14:30 - 19:00", title: "Dentro La Storia", location: "Palco Centrale", 
+          indic: "Masterclass di sceneggiatura per fumetti con Alessandro Sisti. Iscriviti Subito!!",
+          references: [
+            { title: "Iscrizione Masterclass", url: "https://forms.gle/6U5VB7qsxRLmAsZY6" },
+          ],
+        },
+        { time: "10:00 - 21:00", title: "DJ Set con DJ Giuspe", location: "Piazza Cesare Battisti", 
+          indic: "DJ Set in Piazza Cesare Battisti con DJ Giuspe.",
+          references: [],
+        },
+        { time: "20:00 - 23.00", title: "Sessione D&D notturna", location: "Piazza Cesare Battisti", 
+          indic: "Sessione di D&D notturna con Busaplay.",
+          references: [],
+        },
+        { time: "23:00", title: "Fine Secondo Giorno", location: "Piazza Cesare Battisti", 
+          indic: "Chiusura secondo giorno della Fiera.",
+          references: [],
+        }
       ]
     },
     {
@@ -113,7 +208,9 @@ export const eventData = {
         { time: "10:00", title: "Mostra Dedicata a PK", location: "Palco Centrale", indic: "Dedicata alla serie PK: meno uno all'alba" },
         { time: "11:00 - 19:00", title: "Dentro La Storia", location: "Palco Centrale", indic: "Masterclass di sceneggiatura per fumetti con Alessandro Sisti. Richiesta iscrizione."  },
         { time: "11:00 - 19:00", title: "Gara Cosplay con Cosplay & Nerd", location: "Piazza Cesare Battisti", indic: "Iscrizioni: ore 11:00 - 14:30.\npre-Judging: ore 14:30-15:30.\nCosplay Contest: ore 16:00.\nPremiazioni: ore 17:30"  },
-        { time: "21:00", title: "Movie Night: Japan Fantasy - Evento conclusivo", location: "Rocca", indic: "le più belle colonne sonore di anime e videgiochi suonate dal vivo" },
+        { 
+          id: "movie-night-japan",
+          time: "21:00", title: "Movie Night: Japan Fantasy", location: "Rocca", indic: "le più belle colonne sonore di anime e videgiochi suonate dal vivo" },
         { time: "23:00", title: "Fine Fiera", location: "Piazza Cesare Battisti", indic: "Chiusura Fiera e rigraziamenti"  }
       ]
     }
