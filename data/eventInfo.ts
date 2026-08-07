@@ -104,7 +104,7 @@ export const eventData = {
       name: "Busaplay",
       role: "",
       image: "/immagini/guests/busaplay/LogoBusaplay/PNG/BusaPlay_Logo_3.png",
-      description: "Associazione trentina atta a promuovere la socialità e la cultura attraverso giochi da tavolo, giochi di ruolo ed eventi ludici.",
+      description: "Associazione trentina atta a promuovere la socialità e la cultura attraverso giochi da tavolo, giochi di ruolo ed eventi ludici. Nata da un gruppo di amici appasionati con l'obbiettivo di creare momenti di aggregazione e socialità all'insegna di un intrattenimento leggero",
       featured: true,
       showFrontText: false,
     },
@@ -113,7 +113,7 @@ export const eventData = {
       name: "Ludimus",
       role: "Robotics Expert",
       image: "/immagini/guests/ludimus.svg",
-      description: "Associazione trentina dedicata alla gestione di eventi culturali tramite giochi da tavolo ed escape room. Vanta un catalogo di oltre 300 giochi da tavolo.",
+      description: "Associazione trentina dedicata alla gestione di eventi culturali tramite giochi da tavolo ed escape room. Nata nel 2016 con l'obbiettivo di diffondere la cultura moderna attraverso un amplio catalogo di oltre 300 giochi da tavolo e oltre 520 iscritti.",
       featured: true,
       showFrontText: false,
     },
@@ -211,7 +211,12 @@ export const eventData = {
         { time: "14:30 - 18:00", title: "Dentro La Storia", location: "Sala museo MAG", indic: "Masterclass di sceneggiatura per fumetti con Alessandro Sisti. Iscriviti Subito!!"  },
         {
           id: "gara-cosplay",
-          time: "16:00 - 19:00", title: "Gara Cosplay diretta da CosplayAndNerd", location: "Piazza Cesare Battisti", indic: "Con la possibilità di incontrare e chiaccherare con grandi cosplayer.\nIscrizioni: ore 11:00 - 14:30.\npre-Judging: ore 14:30-15:30.\nCosplay Contest: ore 16:00.\nPremiazioni: ore 17:30"  },
+          time: "16:00 - 19:00", title: "Gara Cosplay diretta da CosplayAndNerd", location: "Piazza Cesare Battisti", indic: "Con la possibilità di incontrare e chiaccherare con grandi cosplayer.\nIscrizioni: ore 11:00 - 14:30.\npre-Judging: ore 14:30-15:30.\nCosplay Contest: ore 16:00.\nPremiazioni: ore 17:30",  
+          references: [
+            { title: "Pre iscrizione", url: "https://www.cosplayandnerd.it/preiscrizione-gara-cosplay/" },
+          ],          
+        },
+
         { 
           id: "movie-night-japan",
           time: "21:00", title: "Movie Night: Japan Fantasy", location: "Rocca", indic: "le più belle colonne sonore di anime e videgiochi suonate dal vivo. Acquista subito il biglietto!" },
