@@ -8,7 +8,13 @@ import Highlights from "@/components/Highlights";
 export default function Home() {
   return (
     <main className="min-h-screen bg-brand-dark text-brand-text font-sans selection:bg-brand-accent-orange selection:text-brand-text">
-      {/* 1. HERO SECTION */}
+      {/* 1. TITOLO H1 NASCOSTO PER LA SEO E L'ACCESSIBILITÀ */}
+      <h1 className="sr-only">
+        {eventData.hero.title}
+        {eventData.hero.subtitle ? ` - ${eventData.hero.subtitle}` : " - Tre giorni di fumetti, gaming e cosplay"}
+      </h1>
+
+      {/* 2. HERO SECTION */}
       <section className="relative h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Immagine
