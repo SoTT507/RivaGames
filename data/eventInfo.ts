@@ -223,17 +223,15 @@ export const eventData = {
       day: "Domenica 16",
       events: [
         { time: "10:00", title: "Apertura Terzo Giorno", location: "Cortile interno della Rocca", indic: "Apertura dei cancelli della Fiera." },
-        { time: "10:00 - 17:30", title: "Area Food", location: "", indic: "Tante delizie tra cui scegliere." },
-        { time: "10:00", title: "Area Market & Espositori", location: "", indic: "Allestiti per tutta la piazza e nel giardino della Rocca." },
         { time: "10:00 - 17:30", title: "Ludoteca con Ludimus e Busaplay", location: "Area Gaming", indic: "Giochi da tavolo in compagnia." },
         { time: "10:00 - 17:30", title: "TCG con Pouperwave", location: "Cortile interno della Rocca", indic: "Tornei Magic: Ore 11:00 e ore 14:00" },
-        { time: "10:00 - 17:30", title: "Area Gaming con GamersArena", location: "Padiglione A", indic: "Tornei di Mario Kart e Fifa e Giri nel simulatore F1." },
+        { time: "10:00 - 17:30", title: "Area Gaming con GamersArena", location: "Cortile interno della Rocca", indic: "Tornei di Mario Kart e Fifa e Giri nel simulatore F1." },
         { time: "10:00", title: "Mostra Dedicata a PK", location: "Cortile interno della Rocca", indic: "Dedicata alla serie di Paperinik arriva la mostra \"PK - Meno uno all'alba\"" },
         { time: "11:00 - 14:30", title: "Intervista ad Alessandro Sisti", location: "Biblioteca Civica", indic: "Intervista allo sceneggiatore italiano Alessandro Sisti, l'intervistatore sarà Giacomo Panozzo"},
         { time: "14:30 - 18:00", title: "Dentro La Storia", location: "Sala museo MAG", indic: "Masterclass di sceneggiatura per fumetti con Alessandro Sisti. Iscriviti Subito!!"  },
         {
           id: "gara-cosplay",
-          time: "16:00 - 19:00", title: "Gara Cosplay diretta da CosplayAndNerd", location: "Cosplay Contest, talk con gli ospiti del Meet & Greet, giochi e attività dedicate a tutta la community nerd. Pre-iscrizioni al Cosplay Contest già aperte.\n• Iscrizioni: ore 11:00 - 14:30.\n• pre-Judging: ore 14:30-15:30.\n• Cosplay Contest: ore 16:00.\n• Premiazioni: ore 17:30",  
+          time: "16:00 - 19:00", title: "Gara Cosplay diretta da CosplayAndNerd",location: "Piazza Cesare Battisti", indic: "Cosplay Contest, talk con gli ospiti del Meet & Greet, giochi e attività dedicate a tutta la community nerd. Pre-iscrizioni al Cosplay Contest già aperte.\n• Iscrizioni: ore 11:00 - 14:30.\n• pre-Judging: ore 14:30-15:30.\n• Cosplay Contest: ore 16:00.\n• Premiazioni: ore 17:30",  
           references: [
             { title: "Pre iscrizione", url: "https://www.cosplayandnerd.it/preiscrizione-gara-cosplay/" },
           ],          
