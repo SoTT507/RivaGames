@@ -33,7 +33,7 @@ export const eventData = {
     tickets: [
         {
           eventTitle: "Movie Night: Japan Fantasy",
-          description: "Evento conclusivo. I posti sono limitati, si consiglia la prevendita online. ",
+          description: "Evento conclusivo. I posti sono limitati.",
           prices: [
             { 
               type: "Biglietto intero", 
@@ -60,7 +60,7 @@ export const eventData = {
         },
         {
           eventTitle: "Dentro La Storia - Masterclass",
-          description: "Masterclass di sceneggiatura con Alessandro Sisti. Accesso consentito solo con prenotazione tramite form (vedi specifica evento). Chi ha acquistato il biglietto per la masterclass avrà l'accesso al museo gratuito",
+          description: "Masterclass di sceneggiatura con Alessandro Sisti. Accesso consentito solo con PRENOTAZIONE TRAMITE FORM. Chi ha acquistato il biglietto per la masterclass avrà l'accesso al museo gratuito",
           prices: [
             { 
               type: "Biglietto Masterclass", 

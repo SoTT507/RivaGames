@@ -25,7 +25,7 @@ export default function TicketInfo({ data }: TicketProps) {
     <div className="text-center w-full">
       <h2 className="text-4xl md:text-5xl font-bold mb-16 text-brand-text">
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent-yellow to-brand-accent-orange">
-          Biglietteria
+          Biglietteria | Iscrizioni
         </span>
       </h2>
 
@@ -79,7 +79,7 @@ export default function TicketInfo({ data }: TicketProps) {
 
                       {ticket.onSite && (
                         <p className="text-xs md:text-sm text-brand-text/70 font-medium text-center">
-                          🎫 Acquistabile {ticket.onlineLink ? "anche " : ""}in
+                          🎫 Acquistabile {ticket.onlineLink && !ticket.onSite ? "anche " : "solo "}in
                           loco
                         </p>
                       )}
