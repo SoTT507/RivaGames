@@ -24,7 +24,7 @@ export const siteMetadata: Metadata = {
   
   openGraph: {
     title: "Riva Games Festival 2026 | Fumetto, Gaming e Cosplay",
-    description: "14-16 Agosto 2026. L'evento dedicato alla cultura pop a Riva del Garda. Scopri ospiti, programma e acquista il biglietto!",
+    description: "14-16 Agosto 2026. L'evento dedicato alla cultura pop a Riva del Garda. Scopri ospiti e programma!",
     url: BASE_URL,
     siteName: "Riva Games Festival",
     images: [
