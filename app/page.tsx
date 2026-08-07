@@ -4,6 +4,7 @@ import GuestCard from "@/components/GuestCard";
 import TicketInfo from "@/components/TicketInfo";
 import Schedule from "@/components/schedule";
 import Highlights from "@/components/Highlights";
+import SocialBar from "@/components/SocialBar";
 import { eventJsonLd } from "@/data/metadata";
 
 
@@ -140,7 +141,13 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+
+      {/* SOCIAL */}
+      <SocialBar social={eventData.social} />  
+
       
+      {/* 5. SPONSOR */}
       <section className="py-4 sm:py-6 px-2 bg-white border-y border-gray-200">
         <div className="max-w-7xl mx-auto">
           <h3 className="text-center text-gray-400 text-[10px] sm:text-xs uppercase tracking-widest mb-2 sm:mb-3 font-semibold">

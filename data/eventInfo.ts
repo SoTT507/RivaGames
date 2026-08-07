@@ -12,7 +12,7 @@ export type ScheduleEvent = {
   time: string;
   title: string;
   location: string;
-  indic: string;
+  indic?: string;
   description?: string;
   references?: EventReference[];
 };
@@ -33,36 +33,54 @@ export const eventData = {
     tickets: [
         {
           eventTitle: "Movie Night: Japan Fantasy",
-          description: "Evento conclusivo. I posti sono limitati, si consiglia la prevendita online.",
+          description: "Evento conclusivo. I posti sono limitati, si consiglia la prevendita online. ",
           prices: [
             { 
               type: "Biglietto intero", 
               price: "15,00 €", 
               onlineLink: "", 
-              onSite: true 
+              onSite: true,
+              reserveOnly: false
+
             },
             { 
               type: "Biglietto ridotto under 18", 
               price: "10,00 €", 
               onlineLink: "", 
-              onSite: true 
+              onSite: true, 
+              reserveOnly: false
             },
             { 
               type: "Soci Cassa Rurale Altogarda", 
               price: "1,00 €", 
-              onSite: true 
+              onSite: true,
+              reserveOnly: false 
             },
           ]
         },
         {
           eventTitle: "Dentro La Storia - Masterclass",
-          description: "Masterclass di sceneggiatura con Alessandro Sisti. Accesso consentito solo con prenotazione tramite form (vedi specifica evento).",
+          description: "Masterclass di sceneggiatura con Alessandro Sisti. Accesso consentito solo con prenotazione tramite form (vedi specifica evento). Chi ha acquistato il biglietto per la masterclass avrà l'accesso al museo gratuito",
           prices: [
             { 
-              type: "Iscrizione Masterclass", 
-              price: "15,00 €", 
-              onlineLink: "#", 
-              onSite: true // Solo online per gestire i posti limitati
+              type: "Biglietto Masterclass", 
+              price: "15,00 €",  
+              onlineLink: "https://forms.gle/6U5VB7qsxRLmAsZY6", 
+              onSite: true,  // Solo online per gestire i posti limitati
+              reserveOnly: true
+            }
+          ]
+        },
+        {
+          eventTitle: "Gara Cosplay",
+          description: "Evento organizzato da CosplayAndNerd. Le iscrizioni si faranno in loco dalle 11:00 ma e importante effettuare la pre-iscrizione dal sito sotto indicato",
+          prices: [
+            { 
+              type: "Iscrizione Gara", 
+              price: "GRATUITO",  
+              onlineLink: "https://www.cosplayandnerd.it/preiscrizione-gara-cosplay/", 
+              onSite: false,  // Solo online per gestire i posti limitati
+              reserveOnly: true
             }
           ]
         }
@@ -79,7 +97,11 @@ export const eventData = {
     { id: 10, name: "Cassa Rurale", logo: "/immagini/loghi/cassa_rurale_1.png" }
   ],
 
-
+  social:[
+    {nome: "Instagram", link: "https://www.instagram.com/rivagamesfestival/"},
+    {nome: "TikTok", link: "https://www.youtube.com/watch?v=QDia3e12czc"},
+    {nome: "Facebook", link: "https://www.facebook.com/p/Riva-Games-Festival-61578261083808/"}
+  ],
 
   guests: [
     {
@@ -122,7 +144,7 @@ export const eventData = {
       name: "Cosplay and Nerd",
       role: "",
       image: "/immagini/guests/cosplay_and_nerd.jpg",
-      description: "CosplayAndNerd è una comunity che ha trasformato il proprio amore per il mondo cosplay e nerd in un'attività creativa e coinvolgente. Fondata per dar vita ad eventi straordinari, è ormai da 10 anni un punto di riferimento per chi cerca esperienze uniche e indimenticabili",
+      description: "CosplayAndNerd è una comunity che ha trasformato il proprio amore per il mondo cosplay e nerd in un'attività creativa e coinvolgente. Fondata per dar vita ad eventi straordinari, è ormai da 10 anni un punto di riferimento per chi cerca esperienze uniche e indimenticabili.",
       featured: true,
       showFrontText: false,
     },
@@ -201,17 +223,15 @@ export const eventData = {
       day: "Domenica 16",
       events: [
         { time: "10:00", title: "Apertura Terzo Giorno", location: "Cortile interno della Rocca", indic: "Apertura dei cancelli della Fiera." },
-        { time: "10:00 - 17:30", title: "Area Food", location: "", indic: "Tante delizie tra cui scegliere." },
-        { time: "10:00", title: "Area Market & Espositori", location: "", indic: "Allestiti per tutta la piazza e nel giardino della Rocca." },
         { time: "10:00 - 17:30", title: "Ludoteca con Ludimus e Busaplay", location: "Area Gaming", indic: "Giochi da tavolo in compagnia." },
         { time: "10:00 - 17:30", title: "TCG con Pouperwave", location: "Cortile interno della Rocca", indic: "Tornei Magic: Ore 11:00 e ore 14:00" },
-        { time: "10:00 - 17:30", title: "Area Gaming con GamersArena", location: "Padiglione A", indic: "Tornei di Mario Kart e Fifa e Giri nel simulatore F1." },
+        { time: "10:00 - 17:30", title: "Area Gaming con GamersArena", location: "Cortile interno della Rocca", indic: "Tornei di Mario Kart e Fifa e Giri nel simulatore F1." },
         { time: "10:00", title: "Mostra Dedicata a PK", location: "Cortile interno della Rocca", indic: "Dedicata alla serie di Paperinik arriva la mostra \"PK - Meno uno all'alba\"" },
         { time: "11:00 - 14:30", title: "Intervista ad Alessandro Sisti", location: "Biblioteca Civica", indic: "Intervista allo sceneggiatore italiano Alessandro Sisti, l'intervistatore sarà Giacomo Panozzo"},
         { time: "14:30 - 18:00", title: "Dentro La Storia", location: "Sala museo MAG", indic: "Masterclass di sceneggiatura per fumetti con Alessandro Sisti. Iscriviti Subito!!"  },
         {
           id: "gara-cosplay",
-          time: "16:00 - 19:00", title: "Gara Cosplay diretta da CosplayAndNerd", location: "Piazza Cesare Battisti", indic: "Con la possibilità di incontrare e chiaccherare con grandi cosplayer.\nIscrizioni: ore 11:00 - 14:30.\npre-Judging: ore 14:30-15:30.\nCosplay Contest: ore 16:00.\nPremiazioni: ore 17:30",  
+          time: "16:00 - 19:00", title: "Gara Cosplay diretta da CosplayAndNerd",location: "Piazza Cesare Battisti", indic: "Cosplay Contest, talk con gli ospiti del Meet & Greet, giochi e attività dedicate a tutta la community nerd. Pre-iscrizioni al Cosplay Contest già aperte.\n• Iscrizioni: ore 11:00 - 14:30.\n• pre-Judging: ore 14:30-15:30.\n• Cosplay Contest: ore 16:00.\n• Premiazioni: ore 17:30",  
           references: [
             { title: "Pre iscrizione", url: "https://www.cosplayandnerd.it/preiscrizione-gara-cosplay/" },
           ],          

@@ -3,6 +3,8 @@ import { useState } from "react";
 import { eventData, type ScheduleEvent, type EventReference } from "@/data/eventInfo";
 import Highlights from "@/components/Highlights";
 
+
+
 export default function Schedule() {
   // All'avvio i giorni sono CHIUSI
   const [activeDay, setActiveDay] = useState(eventData.schedule[0].day);

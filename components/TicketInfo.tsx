@@ -1,7 +1,20 @@
+interface Price {
+  type: string;
+  price: string;
+  onlineLink?: string;
+  onSite?: boolean;
+  reserveOnly?: boolean; // <- Nuova proprietà
+}
+
+interface TicketCategory {
+  eventTitle: string;
+  description?: string;
+  prices: Price[];
+}
 import { TicketCategory } from "@/data/eventInfo";
 
 type TicketProps = {
-  data: TicketCategory[]; // Ora accetta l'array di eventi a pagamento
+  data: TicketCategory[];
 };
 
 export default function TicketInfo({ data }: TicketProps) {
@@ -56,7 +69,7 @@ export default function TicketInfo({ data }: TicketProps) {
                           rel="noopener noreferrer"
                           className="block w-full py-3 px-4 rounded-xl font-bold text-brand-dark bg-brand-accent-yellow hover:bg-brand-accent-orange transition-colors shadow-md text-sm md:text-base uppercase tracking-wider text-center"
                         >
-                          Acquista Online
+                          {ticket.reserveOnly ? "Iscriviti Online" : "Acquista Online"}
                         </a>
                       ) : (
                         <div className="block w-full py-3 px-4 rounded-xl font-bold text-brand-text/50 bg-brand-surface border border-brand-border text-sm md:text-base uppercase tracking-wider text-center cursor-default">
