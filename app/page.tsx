@@ -85,30 +85,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-4 sm:py-6 px-2 bg-white border-y border-gray-200">
-        <div className="max-w-7xl mx-auto">
-          <h3 className="text-center text-gray-400 text-[10px] sm:text-xs uppercase tracking-widest mb-2 sm:mb-3 font-semibold">
-            I nostri Sponsor
-          </h3>
-
-          <div className="flex flex-wrap justify-center items-center gap-x-6 sm:gap-x-8 md:gap-x-12 gap-y-4 sm:gap-y-6">
-            {eventData.sponsors.map((sponsor) => (
-              <div
-                key={sponsor.id}
-                className="flex items-center justify-center hover:scale-105 transition-all duration-300"
-              >
-                <Immagine
-                  src={sponsor.logo}
-                  alt={sponsor.name}
-                  width={100}
-                  height={50}
-                  className="object-contain h-8 sm:h-10 md:h-12 w-auto"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* COMPONENTE BANDA SCORREVOLE */}
       <Highlights />
@@ -144,6 +121,31 @@ export default function Home() {
               .map((guest) => (
                 <GuestCard key={guest.id} guest={guest} />
               ))}
+          </div>
+        </div>
+      </section>
+      
+      <section className="py-4 sm:py-6 px-2 bg-white border-y border-gray-200">
+        <div className="max-w-7xl mx-auto">
+          <h3 className="text-center text-gray-400 text-[10px] sm:text-xs uppercase tracking-widest mb-2 sm:mb-3 font-semibold">
+            I nostri Sponsor
+          </h3>
+
+          <div className="flex flex-wrap justify-center items-center gap-x-6 sm:gap-x-8 md:gap-x-12 gap-y-4 sm:gap-y-6">
+            {eventData.sponsors.map((sponsor) => (
+              <div
+                key={sponsor.id}
+                className="flex items-center justify-center hover:scale-105 transition-all duration-300"
+              >
+                <Immagine
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  width={100}
+                  height={50}
+                  className="object-contain h-8 sm:h-10 md:h-12 w-auto"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>

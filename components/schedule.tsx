@@ -1,11 +1,11 @@
 "use client";
 import { useState } from "react";
-import { eventData } from "@/data/eventInfo";
+import { eventData, type ScheduleEvent, type EventReference } from "@/data/eventInfo";
 import Highlights from "@/components/Highlights";
 
 export default function Schedule() {
   const [activeDay, setActiveDay] = useState(eventData.schedule[0].day);
-  const [selectedEvent, setSelectedEvent] = useState<any | null>(null);
+  const [selectedEvent, setSelectedEvent] = useState<ScheduleEvent | null>(null);
   const currentSchedule = eventData.schedule.find((s) => s.day === activeDay);
 
   return (
@@ -64,7 +64,6 @@ export default function Schedule() {
             <div className="absolute inset-0 bg-brand-surface z-0 transition-colors" />
 
             {/* LAYER 2: GRADIENTE OBLIQUO INVERTITO (Da destra verso sinistra) */}
-            {/* Il lato destro scuro (brand-dark) garantisce il massimo contrasto per il testo giallo, degradando dolcemente verso sinistra */}
             <div className="absolute inset-0 w-full h-full bg-[linear-gradient(285deg,var(--color-brand-dark)_30%,var(--color-brand-surface)_70%)] z-0 opacity-95 group-hover:opacity-100 transition-opacity" />
 
             {/* CONTENUTO (Titolo e Luogo) */}
@@ -116,12 +115,10 @@ export default function Schedule() {
                 {selectedEvent.title}
               </h3>
 
-              {/* QUI AGGIUNGIAMO IL GIORNO PRIMA DELL'ORA */}
               <p className="text-xl font-black text-brand-accent-yellow mb-6">
                 {activeDay} | {selectedEvent.time}
               </p>
 
-              {/* Contenuto della descrizione ingrandito */}
               <div className="text-brand-text/90 leading-loose text-base md:text-lg lg:text-xl mt-4">
                 {selectedEvent.description ? (
                   <p>{selectedEvent.description}</p>
@@ -136,61 +133,60 @@ export default function Schedule() {
               </div>
             </div>
 
-            {/* Griglia bottoni di collegamento (Max 2 per riga) */}
-            {selectedEvent.references &&
-              selectedEvent.references.length > 0 && (
-                <div className="mt-4 pt-4 border-t border-brand-border/50 shrink-0">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
-                    {selectedEvent.references.map((ref, idx) => {
-                      // CASO 1: Il bottone punta a un altro evento
-                      if (ref.targetEventId) {
-                        return (
-                          <button
-                            key={idx}
-                            onClick={() => {
-                              let target = null;
-                              for (const day of eventData.schedule) {
-                                const found = day.events.find(
-                                  (e) => e.id === ref.targetEventId,
-                                );
-                                if (found) {
-                                  target = found;
-                                  setActiveDay(day.day);
-                                  break;
-                                }
+            {/* Griglia bottoni di collegamento (Max 2 per riga) - CON TIPIZZAZIONE CORRETTA */}
+            {selectedEvent.references && selectedEvent.references.length > 0 && (
+              <div className="mt-4 pt-4 border-t border-brand-border/50 shrink-0">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+                  {selectedEvent.references.map((ref: EventReference, idx: number) => {
+                    // CASO 1: Il bottone punta a un altro evento
+                    if (ref.targetEventId) {
+                      return (
+                        <button
+                          key={idx}
+                          onClick={() => {
+                            let target: ScheduleEvent | null = null;
+                            for (const day of eventData.schedule) {
+                              const found = day.events.find(
+                                (e: ScheduleEvent) => e.id === ref.targetEventId,
+                              );
+                              if (found) {
+                                target = found;
+                                setActiveDay(day.day);
+                                break;
                               }
-                              if (target) {
-                                setSelectedEvent(target);
-                              }
-                            }}
-                            className="flex items-center justify-center bg-brand-accent-orange text-brand-dark py-3 px-4 rounded-xl font-bold hover:bg-brand-accent-yellow transition-colors shadow-md text-sm md:text-base text-center w-full"
-                          >
-                            {ref.title}
-                          </button>
-                        );
-                      }
+                            }
+                            if (target) {
+                              setSelectedEvent(target);
+                            }
+                          }}
+                          className="flex items-center justify-center bg-brand-accent-orange text-brand-dark py-3 px-4 rounded-xl font-bold hover:bg-brand-accent-yellow transition-colors shadow-md text-sm md:text-base text-center w-full"
+                        >
+                          {ref.title}
+                        </button>
+                      );
+                    }
 
-                      // CASO 2: Il bottone è un normale link (URL)
-                      if (ref.url) {
-                        const isExternal = ref.url.startsWith("http");
-                        return (
-                          <a
-                            key={idx}
-                            href={ref.url}
-                            target={isExternal ? "_blank" : "_self"}
-                            rel={isExternal ? "noopener noreferrer" : ""}
-                            className="flex items-center justify-center bg-brand-accent-orange text-brand-dark py-3 px-4 rounded-xl font-bold hover:bg-brand-accent-yellow transition-colors shadow-md text-sm md:text-base text-center w-full"
-                          >
-                            {ref.title}
-                          </a>
-                        );
-                      }
+                    // CASO 2: Il bottone è un normale link (URL)
+                    if (ref.url) {
+                      const isExternal = ref.url.startsWith("http");
+                      return (
+                        <a
+                          key={idx}
+                          href={ref.url}
+                          target={isExternal ? "_blank" : "_self"}
+                          rel={isExternal ? "noopener noreferrer" : ""}
+                          className="flex items-center justify-center bg-brand-accent-orange text-brand-dark py-3 px-4 rounded-xl font-bold hover:bg-brand-accent-yellow transition-colors shadow-md text-sm md:text-base text-center w-full"
+                        >
+                          {ref.title}
+                        </a>
+                      );
+                    }
 
-                      return null;
-                    })}
-                  </div>
+                    return null;
+                  })}
                 </div>
-              )}
+              </div>
+            )}
           </div>
         </div>
       )}

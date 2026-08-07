@@ -15,7 +15,7 @@ export default function Highlights() {
   const highlightedEvents = eventData.highlightedEvents
     .map((id) => {
       for (const scheduleDay of eventData.schedule) {
-        const foundEvent = scheduleDay.events.find((e) => e.id === id);
+        const foundEvent = scheduleDay.events.find( (e: ScheduleEvent) => e.id === id);
         if (foundEvent) {
           return { ...foundEvent, day: scheduleDay.day };
         }
@@ -115,7 +115,7 @@ export default function Highlights() {
                               let target = null;
                               for (const day of eventData.schedule) {
                                 const found = day.events.find(
-                                  (e) => e.id === ref.targetEventId,
+                                  (e: ScheduleEvent) => e.id === ref.targetEventId
                                 );
                                 if (found) {
                                   target = { ...found, day: day.day };
