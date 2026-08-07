@@ -10,9 +10,21 @@ export const siteMetadata: Metadata = {
   description: "14-16 Agosto 2026: Tre giorni di cultura pop a Riva del Garda. Incontra Alessandro Sisti, Cosplay and Nerd, partecipa ai tornei gaming e ascolta il Corpo Bandistico di Riva del Garda.",
   
   keywords: [
-    "Riva Games Festival", 
+    "riva games festival",
+    "Riva Games Festival",
+    "riva games festival 2026",
+    "riva games",
+    "riva games 2026",
+    "fiera fumetto",
+    "fiera fumetto Trentino",
+    "fiera del fumetto Trentino",
+    "fiera del fumetto",
+    "riva del garda",
+    "Magic",
+    "tornei magic",
+    "magic pauper",
+    "Magic Pauper",
     "Riva del Garda", 
-    "fiera del fumetto Trentino", 
     "gaming event", 
     "gara cosplay",
     "Alessandro Sisti",
@@ -24,7 +36,7 @@ export const siteMetadata: Metadata = {
   
   openGraph: {
     title: "Riva Games Festival 2026 | Fumetto, Gaming e Cosplay",
-    description: "14-16 Agosto 2026. L'evento dedicato alla cultura pop a Riva del Garda. Scopri ospiti, programma e acquista il biglietto!",
+    description: "14-16 Agosto 2026. L'evento dedicato alla cultura pop a Riva del Garda. Scopri ospiti e programma!",
     url: BASE_URL,
     siteName: "Riva Games Festival",
     images: [

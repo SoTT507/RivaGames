@@ -31,7 +31,7 @@ export const metadata: Metadata = siteMetadata;
   
 //   openGraph: {
 //     title: "Riva Games Festival 2026 | 14-16 Agosto",
-//     description: "L'evento dedicato alla cultura pop a Riva del Garda. Scopri ospiti, programma e acquista il biglietto!",
+//     description: "L'evento dedicato alla cultura pop a Riva del Garda. Scopri ospiti e programma!",
 //     url: "https://www.rivagames.info", // SOSTITUISCI CON IL TUO DOMINIO REALE
 //     siteName: "Riva Games Festival",
 //     images: [
