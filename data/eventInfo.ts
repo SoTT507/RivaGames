@@ -12,7 +12,7 @@ export type ScheduleEvent = {
   time: string;
   title: string;
   location: string;
-  indic: string;
+  indic?: string;
   description?: string;
   references?: EventReference[];
 };
@@ -70,6 +70,19 @@ export const eventData = {
               reserveOnly: true
             }
           ]
+        },
+        {
+          eventTitle: "Gara Cosplay",
+          description: "Evento organizzato da CosplayAndNerd. Le iscrizioni si faranno in loco dalle 11:00 ma e importante effettuare la pre-iscrizione dal sito sotto indicato",
+          prices: [
+            { 
+              type: "Iscrizione Gara", 
+              price: "GRATUITO",  
+              onlineLink: "https://www.cosplayandnerd.it/preiscrizione-gara-cosplay/", 
+              onSite: false,  // Solo online per gestire i posti limitati
+              reserveOnly: true
+            }
+          ]
         }
       ],
 
@@ -84,7 +97,11 @@ export const eventData = {
     { id: 10, name: "Cassa Rurale", logo: "/immagini/loghi/cassa_rurale_1.png" }
   ],
 
-
+  social:[
+    {nome: "Instagram", link: "https://www.instagram.com/rivagamesfestival/"},
+    {nome: "TikTok", link: "https://www.youtube.com/watch?v=QDia3e12czc"},
+    {nome: "Facebook", link: "https://www.facebook.com/p/Riva-Games-Festival-61578261083808/"}
+  ],
 
   guests: [
     {
@@ -216,7 +233,7 @@ export const eventData = {
         { time: "14:30 - 18:00", title: "Dentro La Storia", location: "Sala museo MAG", indic: "Masterclass di sceneggiatura per fumetti con Alessandro Sisti. Iscriviti Subito!!"  },
         {
           id: "gara-cosplay",
-          time: "16:00 - 19:00", title: "Gara Cosplay diretta da CosplayAndNerd", location: "Piazza Cesare Battisti", indic: "Con la possibilità di incontrare e chiaccherare con grandi cosplayer.\nIscrizioni: ore 11:00 - 14:30.\npre-Judging: ore 14:30-15:30.\nCosplay Contest: ore 16:00.\nPremiazioni: ore 17:30",  
+          time: "16:00 - 19:00", title: "Gara Cosplay diretta da CosplayAndNerd", location: "Cosplay Contest, talk con gli ospiti del Meet & Greet, giochi e attività dedicate a tutta la community nerd. Pre-iscrizioni al Cosplay Contest già aperte.\n• Iscrizioni: ore 11:00 - 14:30.\n• pre-Judging: ore 14:30-15:30.\n• Cosplay Contest: ore 16:00.\n• Premiazioni: ore 17:30",  
           references: [
             { title: "Pre iscrizione", url: "https://www.cosplayandnerd.it/preiscrizione-gara-cosplay/" },
           ],          
