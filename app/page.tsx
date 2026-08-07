@@ -5,11 +5,27 @@ import TicketInfo from "@/components/TicketInfo";
 import Schedule from "@/components/schedule";
 import Highlights from "@/components/Highlights";
 import SocialBar from "@/components/SocialBar";
+import { eventJsonLd } from "@/data/metadata";
+
+
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-brand-dark text-brand-text font-sans selection:bg-brand-accent-orange selection:text-brand-text">
-      {/* 1. HERO SECTION */}
+
+      {/* DATI STRUTTURATI JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}
+      />
+      
+      {/* 1. TITOLO H1 NASCOSTO PER LA SEO E L'ACCESSIBILITÀ */}
+      <h1 className="sr-only">
+        {eventData.hero.title}
+        {eventData.hero.subtitle ? ` - ${eventData.hero.subtitle}` : " - Tre giorni di fumetti, gaming e cosplay"}
+      </h1>
+
+      {/* 2. HERO SECTION */}
       <section className="relative h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Immagine
@@ -73,14 +89,14 @@ export default function Home() {
           </div>
         </div>
 
-        {/* NUOVO: INDICATORE DI SCORRIMENTO (Compare dopo 3s) */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-0 animate-fade-in-delayed z-20">
-          <span className="text-brand-text/50 uppercase tracking-[0.4em] text-[10px] md:text-xs font-bold">
+        {/* INDICATORE DI SCORRIMENTO (Scompare su schermi bassi) */}
+        <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in-delayed z-20 [@media(max-height:750px)]:hidden">
+          <span className="text-brand-text/50 uppercase tracking-[0.4em] text-[10px] font-bold">
             Scorri
           </span>
-          {/* La traccia verticale trasparente */}
-          <div className="w-[1px] h-12 md:h-16 bg-brand-text/20 overflow-hidden relative">
-            {/* La "goccia" gialla che cade */}
+          {/* Linea verticale accorciata */}
+          <div className="w-[1px] h-6 sm:h-8 md:h-10 bg-brand-text/20 overflow-hidden relative">
+            {/* La "goccia" gialla animata */}
             <div className="absolute top-0 left-0 w-full h-full bg-brand-accent-yellow animate-scroll-drop" />
           </div>
         </div>
