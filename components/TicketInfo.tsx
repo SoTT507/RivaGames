@@ -11,7 +11,6 @@ interface TicketCategory {
   description?: string;
   prices: Price[];
 }
-import { TicketCategory } from "@/data/eventInfo";
 
 type TicketProps = {
   data: TicketCategory[];
