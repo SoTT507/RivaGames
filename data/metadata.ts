@@ -29,7 +29,7 @@ export const siteMetadata: Metadata = {
     siteName: "Riva Games Festival",
     images: [
       {
-        url: "/immagini/illustrazione_locandina_RGF.webp",
+        url: "/immagini/og-image-rgf.png",
         width: 1200,
         height: 630,
         alt: "Locandina Ufficiale Riva Games Festival 2026",
@@ -44,7 +44,7 @@ export const siteMetadata: Metadata = {
     card: "summary_large_image",
     title: "Riva Games Festival 2026 a Riva del Garda",
     description: "Tre giorni di fumetti, gaming e cosplay con Alessandro Sisti e Cosplay and Nerd.",
-    images: ["/immagini/illustrazione_locandina_RGF.webp"],
+    images: ["/immagini/og-image-rgf.png"],
   },
 };
 

@@ -1,4 +1,3 @@
-// components/TicketInfo.tsx
 import { TicketCategory } from "@/data/eventInfo";
 
 type TicketProps = {
