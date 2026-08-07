@@ -33,36 +33,41 @@ export const eventData = {
     tickets: [
         {
           eventTitle: "Movie Night: Japan Fantasy",
-          description: "Evento conclusivo. I posti sono limitati, si consiglia la prevendita online.",
+          description: "Evento conclusivo. I posti sono limitati, si consiglia la prevendita online. ",
           prices: [
             { 
               type: "Biglietto intero", 
               price: "15,00 €", 
               onlineLink: "", 
-              onSite: true 
+              onSite: true,
+              reserveOnly: false
+
             },
             { 
               type: "Biglietto ridotto under 18", 
               price: "10,00 €", 
               onlineLink: "", 
-              onSite: true 
+              onSite: true, 
+              reserveOnly: false
             },
             { 
               type: "Soci Cassa Rurale Altogarda", 
               price: "1,00 €", 
-              onSite: true 
+              onSite: true,
+              reserveOnly: false 
             },
           ]
         },
         {
           eventTitle: "Dentro La Storia - Masterclass",
-          description: "Masterclass di sceneggiatura con Alessandro Sisti. Accesso consentito solo con prenotazione tramite form (vedi specifica evento).",
+          description: "Masterclass di sceneggiatura con Alessandro Sisti. Accesso consentito solo con prenotazione tramite form (vedi specifica evento). Chi ha acquistato il biglietto per la masterclass avrà l'accesso al museo gratuito",
           prices: [
             { 
-              type: "Iscrizione Masterclass", 
-              price: "15,00 €", 
-              onlineLink: "#", 
-              onSite: true // Solo online per gestire i posti limitati
+              type: "Biglietto Masterclass", 
+              price: "15,00 €",  
+              onlineLink: "https://forms.gle/6U5VB7qsxRLmAsZY6", 
+              onSite: true,  // Solo online per gestire i posti limitati
+              reserveOnly: true
             }
           ]
         }
@@ -104,7 +109,7 @@ export const eventData = {
       name: "Busaplay",
       role: "",
       image: "/immagini/guests/busaplay/LogoBusaplay/PNG/BusaPlay_Logo_3.png",
-      description: "Associazione trentina atta a promuovere la socialità e la cultura attraverso giochi da tavolo, giochi di ruolo ed eventi ludici. Nata da un gruppo di amici appasionati con l'obbiettivo di creare momenti di aggregazione e socialità all'insegna di un intrattenimento leggero"",
+      description: "Associazione trentina atta a promuovere la socialità e la cultura attraverso giochi da tavolo, giochi di ruolo ed eventi ludici. Nata da un gruppo di amici appasionati con l'obbiettivo di creare momenti di aggregazione e socialità all'insegna di un intrattenimento leggero",
       featured: true,
       showFrontText: false,
     },
@@ -122,7 +127,7 @@ export const eventData = {
       name: "Cosplay and Nerd",
       role: "",
       image: "/immagini/guests/cosplay_and_nerd.jpg",
-      description: "CosplayAndNerd è una comunity che ha trasformato il proprio amore per il mondo cosplay e nerd in un'attività creativa e coinvolgente. Fondata per dar vita ad eventi straordinari, è ormai da 10 anni un punto di riferimento per chi cerca esperienze uniche e indimenticabili",
+      description: "CosplayAndNerd è una comunity che ha trasformato il proprio amore per il mondo cosplay e nerd in un'attività creativa e coinvolgente. Fondata per dar vita ad eventi straordinari, è ormai da 10 anni un punto di riferimento per chi cerca esperienze uniche e indimenticabili.",
       featured: true,
       showFrontText: false,
     },
@@ -211,7 +216,12 @@ export const eventData = {
         { time: "14:30 - 18:00", title: "Dentro La Storia", location: "Sala museo MAG", indic: "Masterclass di sceneggiatura per fumetti con Alessandro Sisti. Iscriviti Subito!!"  },
         {
           id: "gara-cosplay",
-          time: "16:00 - 19:00", title: "Gara Cosplay diretta da CosplayAndNerd", location: "Piazza Cesare Battisti", indic: "Con la possibilità di incontrare e chiaccherare con grandi cosplayer.\nIscrizioni: ore 11:00 - 14:30.\npre-Judging: ore 14:30-15:30.\nCosplay Contest: ore 16:00.\nPremiazioni: ore 17:30"  },
+          time: "16:00 - 19:00", title: "Gara Cosplay diretta da CosplayAndNerd", location: "Piazza Cesare Battisti", indic: "Con la possibilità di incontrare e chiaccherare con grandi cosplayer.\nIscrizioni: ore 11:00 - 14:30.\npre-Judging: ore 14:30-15:30.\nCosplay Contest: ore 16:00.\nPremiazioni: ore 17:30",  
+          references: [
+            { title: "Pre iscrizione", url: "https://www.cosplayandnerd.it/preiscrizione-gara-cosplay/" },
+          ],          
+        },
+
         { 
           id: "movie-night-japan",
           time: "21:00", title: "Movie Night: Japan Fantasy", location: "Rocca", indic: "le più belle colonne sonore di anime e videgiochi suonate dal vivo. Acquista subito il biglietto!" },
