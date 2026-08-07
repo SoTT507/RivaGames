@@ -27,6 +27,7 @@ export const eventData = {
   highlightedEvents: [
       "torneo-pauper",
       "masterclass-sisti",
+      "gara-cosplay",
       "movie-night-japan"
     ],
     tickets: [
@@ -73,9 +74,9 @@ export const eventData = {
     { id: 1, name: "Provincia Trento", logo: "/immagini/loghi/Logo_Provincia_Autonoma_Trento.png" },
     { id: 3, name: "Alto Garda Ledro", logo: "/immagini/loghi/Logo_Comunità_Alto_Garda_Ledro.jpg" },
     { id: 4, name: "Comune Riva", logo: "/immagini/loghi/Comune_Riva.png" },
-    { id: 10, name: "Cassa Rurale", logo: "/immagini/loghi/cassa_rurale_vallagarina_bcc_logo.jpg" },
+    { id: 5, name: "Banda Riva", logo: "/immagini/loghi/banda_riva_w.jpg" },
     { id: 12, name: "Piano B", logo: "/immagini/loghi/Logo_piano_B.png" },
-    { id: 5, name: "Banda Riva", logo: "/immagini/loghi/banda_riva_w.jpg" }
+    { id: 10, name: "Cassa Rurale", logo: "/immagini/loghi/cassa_rurale_1.png" }
   ],
 
 
@@ -103,7 +104,7 @@ export const eventData = {
       name: "Busaplay",
       role: "",
       image: "/immagini/guests/busaplay/LogoBusaplay/PNG/BusaPlay_Logo_3.png",
-      description: "Dettagli in arrivo...",
+      description: "Associazione trentina atta a promuovere la socialità e la cultura attraverso giochi da tavolo, giochi di ruolo ed eventi ludici. Nata da un gruppo di amici appasionati con l'obbiettivo di creare momenti di aggregazione e socialità all'insegna di un intrattenimento leggero",
       featured: true,
       showFrontText: false,
     },
@@ -112,7 +113,7 @@ export const eventData = {
       name: "Ludimus",
       role: "Robotics Expert",
       image: "/immagini/guests/ludimus.svg",
-      description: "Dettagli in arrivo...",
+      description: "Associazione trentina dedicata alla gestione di eventi culturali tramite giochi da tavolo ed escape room. Nata nel 2016 con l'obbiettivo di diffondere la cultura moderna attraverso un amplio catalogo di oltre 300 giochi da tavolo e oltre 520 iscritti.",
       featured: true,
       showFrontText: false,
     },
@@ -121,7 +122,7 @@ export const eventData = {
       name: "Cosplay and Nerd",
       role: "",
       image: "/immagini/guests/cosplay_and_nerd.jpg",
-      description: "Dettagli in arrivo...",
+      description: "CosplayAndNerd è una comunity che ha trasformato il proprio amore per il mondo cosplay e nerd in un'attività creativa e coinvolgente. Fondata per dar vita ad eventi straordinari, è ormai da 10 anni un punto di riferimento per chi cerca esperienze uniche e indimenticabili",
       featured: true,
       showFrontText: false,
     },
@@ -145,7 +146,7 @@ export const eventData = {
     {
       day: "Sabato 15",
       events: [
-        { time: "10:00", title: "Apertura Secondo Giorno", location: "Palco Centrale", indic: "Apertura dei cancelli della Fiera.",
+        { time: "10:00", title: "Apertura Secondo Giorno", location: "Cortile interno della Rocca", indic: "Apertura dei cancelli della Fiera.",
           references: [],
         },
         { time: "10:00", title: "Mostra Dedicata a PK", location: "Biblioteca Civica", indic: "Dedicata alla serie di Paperinik arriva la mostra \"PK - Meno uno all'alba\"",
@@ -162,7 +163,7 @@ export const eventData = {
           indic: "Ludoteca e giochi da tavolo in compagnia, organizzato da Ludimus, Busaplay e Othello.",
           references: [],
         },
-        { time: "10:00 - 17:30", title: "Magic e TCG con LabTale", location: "Palco Centrale", 
+        { time: "10:00 - 17:30", title: "Magic e TCG con LabTale", location: "Cortile interno della Rocca", 
           indic: "• Magic - Toreno Pauper con premiazione - Ore 11:00 \n• Tavoli dimostrativi \n• Prova gratuita di numerosi giochi di carte",
           references: [
             { title: "Vedi Torneo Pauper", targetEventId: "torneo-pauper" },
@@ -176,18 +177,18 @@ export const eventData = {
         },
         { 
           id: "masterclass-sisti",
-          time: "14:30 - 19:00", title: "Dentro La Storia", location: "Palco Centrale", 
+          time: "14:30 - 18:00", title: "Dentro La Storia", location: "Sala museo MAG", 
           indic: "Masterclass di sceneggiatura per fumetti con Alessandro Sisti. Iscriviti Subito!!",
           references: [
             { title: "Iscrizione Masterclass", url: "https://forms.gle/6U5VB7qsxRLmAsZY6" },
           ],
         },
-        { time: "10:00 - 21:00", title: "DJ Set con DJ Giuspe", location: "Piazza Cesare Battisti", 
+        { time: "18:00 - 21:00", title: "DJ Set con DJ Giuspe", location: "Piazza Cesare Battisti", 
           indic: "DJ Set in Piazza Cesare Battisti con DJ Giuspe.",
           references: [],
         },
         { time: "20:00 - 23.00", title: "Sessione D&D notturna", location: "Piazza Cesare Battisti", 
-          indic: "Sessione di D&D notturna con Busaplay.",
+          indic: "Possibilità di effettuare Oneshot della durata presvista di un paio d'ore con alcuni dei master di BusaPlay",
           references: [],
         },
         { time: "23:00", title: "Fine Secondo Giorno", location: "Piazza Cesare Battisti", 
@@ -199,18 +200,26 @@ export const eventData = {
     {
       day: "Domenica 16",
       events: [
-        { time: "10:00", title: "Apertura Terzo Giorno", location: "Palco Centrale", indic: "Apertura dei cancelli della Fiera." },
+        { time: "10:00", title: "Apertura Terzo Giorno", location: "Cortile interno della Rocca", indic: "Apertura dei cancelli della Fiera." },
         { time: "10:00 - 17:30", title: "Area Food", location: "", indic: "Tante delizie tra cui scegliere." },
         { time: "10:00", title: "Area Market & Espositori", location: "", indic: "Allestiti per tutta la piazza e nel giardino della Rocca." },
         { time: "10:00 - 17:30", title: "Ludoteca con Ludimus e Busaplay", location: "Area Gaming", indic: "Giochi da tavolo in compagnia." },
-        { time: "10:00 - 17:30", title: "TCG con Pouperwave", location: "Palco Centrale", indic: "Tornei Magic: Ore 11:00 e ore 14:00" },
+        { time: "10:00 - 17:30", title: "TCG con Pouperwave", location: "Cortile interno della Rocca", indic: "Tornei Magic: Ore 11:00 e ore 14:00" },
         { time: "10:00 - 17:30", title: "Area Gaming con GamersArena", location: "Padiglione A", indic: "Tornei di Mario Kart e Fifa e Giri nel simulatore F1." },
-        { time: "10:00", title: "Mostra Dedicata a PK", location: "Palco Centrale", indic: "Dedicata alla serie PK: meno uno all'alba" },
-        { time: "11:00 - 19:00", title: "Dentro La Storia", location: "Palco Centrale", indic: "Masterclass di sceneggiatura per fumetti con Alessandro Sisti. Richiesta iscrizione."  },
-        { time: "11:00 - 19:00", title: "Gara Cosplay con Cosplay & Nerd", location: "Piazza Cesare Battisti", indic: "Iscrizioni: ore 11:00 - 14:30.\npre-Judging: ore 14:30-15:30.\nCosplay Contest: ore 16:00.\nPremiazioni: ore 17:30"  },
+        { time: "10:00", title: "Mostra Dedicata a PK", location: "Cortile interno della Rocca", indic: "Dedicata alla serie di Paperinik arriva la mostra \"PK - Meno uno all'alba\"" },
+        { time: "11:00 - 14:30", title: "Intervista ad Alessandro Sisti", location: "Biblioteca Civica", indic: "Intervista allo sceneggiatore italiano Alessandro Sisti, l'intervistatore sarà Giacomo Panozzo"},
+        { time: "14:30 - 18:00", title: "Dentro La Storia", location: "Sala museo MAG", indic: "Masterclass di sceneggiatura per fumetti con Alessandro Sisti. Iscriviti Subito!!"  },
+        {
+          id: "gara-cosplay",
+          time: "16:00 - 19:00", title: "Gara Cosplay diretta da CosplayAndNerd", location: "Piazza Cesare Battisti", indic: "Con la possibilità di incontrare e chiaccherare con grandi cosplayer.\nIscrizioni: ore 11:00 - 14:30.\npre-Judging: ore 14:30-15:30.\nCosplay Contest: ore 16:00.\nPremiazioni: ore 17:30",  
+          references: [
+            { title: "Pre iscrizione", url: "https://www.cosplayandnerd.it/preiscrizione-gara-cosplay/" },
+          ],          
+        },
+
         { 
           id: "movie-night-japan",
-          time: "21:00", title: "Movie Night: Japan Fantasy", location: "Rocca", indic: "le più belle colonne sonore di anime e videgiochi suonate dal vivo" },
+          time: "21:00", title: "Movie Night: Japan Fantasy", location: "Rocca", indic: "le più belle colonne sonore di anime e videgiochi suonate dal vivo. Acquista subito il biglietto!" },
         { time: "23:00", title: "Fine Fiera", location: "Piazza Cesare Battisti", indic: "Chiusura Fiera e rigraziamenti"  }
       ]
     }
