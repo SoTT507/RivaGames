@@ -83,7 +83,20 @@ export const eventData = {
               reserveOnly: true
             }
           ]
-        }
+        },
+        {
+          eventTitle: "Sessione D&D - BusaPlay",
+          description: "Modulo per prenotarsi alle sessioni di D&D. Alla fine del modulo potete lasciare un'indirizzo email e verrete contattati per conferma.",
+          prices: [
+            {
+              type: "Iscrizione Sessione",
+              price: "GRATUITO",
+              onlineLink: "https://docs.google.com/forms/d/1I_Nwqhc1ZbWvEIrydH8iN6EjC6YADYLdCQ8Q6w3IL-8/viewform?hl=it&hl=it&edit_requested=true",
+              onsite: false,
+              reserveOnly: true
+            }
+          ]   
+        },
       ],
 
   
@@ -128,16 +141,16 @@ export const eventData = {
       image: "/immagini/guests/busaplay/LogoBusaplay/PNG/BusaPlay_Logo_3.png",
       description: "Associazione trentina atta a promuovere la socialità e la cultura attraverso giochi da tavolo, giochi di ruolo ed eventi ludici. Nata da un gruppo di amici appasionati con l'obbiettivo di creare momenti di aggregazione e socialità all'insegna di un intrattenimento leggero",
       featured: true,
-      showFrontText: false,
+      showFrontText: true,
     },
     {
       id: "g4",
       name: "Ludimus",
-      role: "Robotics Expert",
+      role: "",
       image: "/immagini/guests/ludimus.svg",
       description: "Associazione trentina dedicata alla gestione di eventi culturali tramite giochi da tavolo ed escape room. Nata nel 2016 con l'obbiettivo di diffondere la cultura moderna attraverso un amplio catalogo di oltre 300 giochi da tavolo e oltre 520 iscritti.",
       featured: true,
-      showFrontText: false,
+      showFrontText: true,
     },
     {
       id: "g5",
@@ -146,7 +159,17 @@ export const eventData = {
       image: "/immagini/guests/cosplay_and_nerd.jpg",
       description: "CosplayAndNerd è una comunity che ha trasformato il proprio amore per il mondo cosplay e nerd in un'attività creativa e coinvolgente. Fondata per dar vita ad eventi straordinari, è ormai da 10 anni un punto di riferimento per chi cerca esperienze uniche e indimenticabili.",
       featured: true,
-      showFrontText: false,
+      showFrontText: true,
+    },
+    {
+      id: "g6",
+      name: "GamersArena",
+      role: "",
+      image: "/immagini/guests/gamersarena.webp",
+      description: "Gamers Arena nasce nel 2014 dalla volontà di condividere e diffondere la passione per i videogames. Gamers Arena si occupa di gaming a 360 gradi: pianificando e promuovendo i campionati sportivi, allestendo le nostre aree da videogioco con prodotti professionali e creando situazioni di vero intrattenimento tra ospiti e visitatori",
+      featured: true,
+      showFrontText: true,
+      
     },
     
   ],
@@ -174,24 +197,24 @@ export const eventData = {
         { time: "10:00", title: "Mostra Dedicata a PK", location: "Biblioteca Civica", indic: "Dedicata alla serie di Paperinik arriva la mostra \"PK - Meno uno all'alba\"",
           references: [],
         },
-        { time: "10:00 - 19:00", title: "Area Gaming con GamersArena", location: "Piazza Cesare Battisti", 
+        { time: "10:00 - 19:00", title: "Area Gaming con GamersArena", location: "Cortile interno Rocca", 
           indic: "• Tornei di Mario Kart \n• Tornei di Fifa \n• Hotlap al simulatore F1.",
           references: [
             { title: "Iscrizione Torneo Mario Kart", url: "#" },
             { title: "Iscrizione Torneo Fifa", url: "#" },
           ],
         },
-        { time: "10:00 - 19:00", title: "Ludoteca con Ludimus, Busaplay e Othello", location: "Piazza Cesare Battisti", 
+        { time: "10:00 - 19:00", title: "Ludoteca con Ludimus, Busaplay e Othello", location: "Cortile interno Rocca", 
           indic: "Ludoteca e giochi da tavolo in compagnia, organizzato da Ludimus, Busaplay e Othello.",
           references: [],
         },
-        { time: "10:00 - 17:30", title: "Magic e TCG con LabTale", location: "Cortile interno della Rocca", 
+        { time: "10:00 - 17:30", title: "Magic e TCG con LabTale", location: "Cortile interno Rocca", 
           indic: "• Magic - Toreno Pauper con premiazione - Ore 11:00 \n• Tavoli dimostrativi \n• Prova gratuita di numerosi giochi di carte",
           references: [
             { title: "Vedi Torneo Pauper", targetEventId: "torneo-pauper" },
           ],
         },
-        { id: "torneo-pauper", time: "11:00", title: "Torneo Commander - Magic", location: "Piazza Cesare Battisti", 
+        { id: "torneo-pauper", time: "11:00", title: "Torneo Commander - Magic", location: "Cortile interno Rocca", 
           indic: "Torneo Pauper con premiazione - ore 11:00",
           references: [
             { title: "Iscrizione Torneo Pauper", url: "#" },
@@ -222,11 +245,11 @@ export const eventData = {
     {
       day: "Domenica 16",
       events: [
-        { time: "10:00", title: "Apertura Terzo Giorno", location: "Cortile interno della Rocca", indic: "Apertura dei cancelli della Fiera." },
-        { time: "10:00 - 17:30", title: "Ludoteca con Ludimus e Busaplay", location: "Area Gaming", indic: "Giochi da tavolo in compagnia." },
-        { time: "10:00 - 17:30", title: "TCG con Pouperwave", location: "Cortile interno della Rocca", indic: "Tornei Magic: Ore 11:00 e ore 14:00" },
-        { time: "10:00 - 17:30", title: "Area Gaming con GamersArena", location: "Cortile interno della Rocca", indic: "Tornei di Mario Kart e Fifa e Giri nel simulatore F1." },
-        { time: "10:00", title: "Mostra Dedicata a PK", location: "Cortile interno della Rocca", indic: "Dedicata alla serie di Paperinik arriva la mostra \"PK - Meno uno all'alba\"" },
+        { time: "10:00", title: "Apertura Terzo Giorno", location: "Cortile interno Rocca", indic: "Apertura dei cancelli della Fiera." },
+        { time: "10:00 - 17:30", title: "Ludoteca con Ludimus e Busaplay", location: "Cortile interno Rocca", indic: "Giochi da tavolo in compagnia." },
+        { time: "10:00 - 17:30", title: "TCG con Pouperwave", location: "Cortile interno Rocca", indic: "Tornei Magic: Ore 11:00 e ore 14:00" },
+        { time: "10:00 - 17:30", title: "Area Gaming con GamersArena", location: "Cortile interno Rocca", indic: "Tornei di Mario Kart e Fifa e Giri nel simulatore F1." },
+        { time: "10:00", title: "Mostra Dedicata a PK", location: "Cortile interno Rocca", indic: "Dedicata alla serie di Paperinik arriva la mostra \"PK - Meno uno all'alba\"" },
         { time: "11:00 - 14:30", title: "Intervista ad Alessandro Sisti", location: "Biblioteca Civica", indic: "Intervista allo sceneggiatore italiano Alessandro Sisti, l'intervistatore sarà Giacomo Panozzo"},
         { time: "14:30 - 18:00", title: "Dentro La Storia", location: "Sala museo MAG", indic: "Masterclass di sceneggiatura per fumetti con Alessandro Sisti. Iscriviti Subito!!"  },
         {
