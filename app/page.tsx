@@ -79,10 +79,10 @@ export default function Home() {
 
             {/* 3. BOTTONE DOWNLOAD MAPPA PDF (Nuovo) */}
             <a
-              href="/mappa.pdf"
-              download="Mappa_RivaGamesFestival.pdf" /* Nome con cui verrà salvato il file sul dispositivo dell'utente */
+              href="/mappa.jpeg"
+              download="Mappa_RivaGamesFestival.jpeg" /* Nome con cui verrà salvato il file sul dispositivo dell'utente */
               className="flex items-center gap-2 bg-brand-accent-orange/90 hover:bg-brand-accent-orange text-brand-dark px-4 py-2 sm:px-6 sm:py-3 rounded-full border border-brand-accent-orange transition-colors shadow-[0_0_15px_rgba(232,109,67,0.4)] font-bold cursor-pointer"
-              title="Scarica la mappa dell'evento in PDF"
+              title="Scarica la mappa"
             >
               <span>🗺️</span> Scarica Mappa
             </a>
