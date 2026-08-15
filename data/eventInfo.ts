@@ -211,7 +211,7 @@ export const eventData = {
         { time: "18:00 - 23:00", title: "Magic e TCG con LabTale", location: "Piazza Cesare Battisti", indic: "Tavoli dimostrativi e prova gratuita di numerosi giochi di carte.",
           references: [
             { title: "Vedi Torneo di Sabato", targetEventId: "torneo-pauper" },
-            { title: "Vedi Torneo di Domenica", targetEventId: "torneo-commander"},
+            { title: "Vedi Torneo di Domenica", targetEventId: "#"},
           ],
         },
         { time: "18:00 - 23:00", title: "DJ Set con DJ Giuspe", location: "Piazza Cesare Battisti", indic: "DJ Set in Piazza Cesare Battisti con DJ Giuspe."  },
@@ -231,9 +231,8 @@ export const eventData = {
         { time: "10:00 - 19:00", title: "Area Gaming con GamersArena", location: "Cortile interno Rocca", 
           indic: "• Tornei di Mario Kart \n• Tornei di Fifa \n• Hotlap al simulatore F1.",
           references: [
-            { title: "Iscrizione Torneo Mario Kart", url: "#" },
-            { title: "Iscrizione Torneo Fifa", url: "#" },
-            { title: "Hotlap al simulatore F1", url: "#"},
+            { title: "Iscrizione Torneo Fifa", url: "https://docs.google.com/forms/d/e/1FAIpQLSeM8V44EfcAlwqTVorh9UqXXI2hqNEHbmNst9YZqLwz1WlhBw/viewform" },
+            { title: "Hotlap al simulatore F1", url: "https://docs.google.com/forms/d/e/1FAIpQLSeM8V44EfcAlwqTVorh9UqXXI2hqNEHbmNst9YZqLwz1WlhBw/viewform"},
           ],
         },
         { time: "10:00 - 19:00", title: "Ludoteca con Ludimus, Busaplay e Othello", location: "Cortile interno Rocca", 
@@ -284,9 +283,8 @@ export const eventData = {
         { time: "10:00 - 17:30", title: "Area Gaming con GamersArena", location: "Cortile interno Rocca", 
           indic: "Tornei di Mario Kart e Fifa e Giri nel simulatore F1.", 
           references: [
-            { title: "Iscrizione Torneo Mario Kart", url: "#" },
-            { title: "Iscrizione Torneo Fifa", url: "#" },
-            { title: "Hotlap al simulatore F1", url: "#"},
+            { title: "Iscrizione Torneo Mario Kart", url: "https://docs.google.com/forms/d/e/1FAIpQLSeM8V44EfcAlwqTVorh9UqXXI2hqNEHbmNst9YZqLwz1WlhBw/viewform" },
+            { title: "Hotlap al simulatore F1", url: "https://docs.google.com/forms/d/e/1FAIpQLSeM8V44EfcAlwqTVorh9UqXXI2hqNEHbmNst9YZqLwz1WlhBw/viewform"},
           ],
         },
         { time: "10:00", title: "Mostra Dedicata a PK", location: "Cortile interno Rocca", indic: "Dedicata alla serie di Paperinik arriva la mostra \"PK - Meno uno all'alba\"" },
