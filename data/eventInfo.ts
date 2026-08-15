@@ -97,6 +97,34 @@ export const eventData = {
             }
           ]   
         },
+        {
+          eventTitle: "Tornei Area Gaming - GamersArena",
+          description: "Modulo per iscriversi ai tornei di Mario Kart, Fifa e Hotlap al simulatore",
+          prices: [
+            {
+              type: "Iscrizione Mario Kart",
+              price: "GRATUITO",
+              onlineLink: "https://docs.google.com/forms/d/e/1FAIpQLSeM8V44EfcAlwqTVorh9UqXXI2hqNEHbmNst9YZqLwz1WlhBw/viewform",
+              onSite: false,
+              reserveOnly: true,
+            },
+            {
+              type: "Iscrizione Fifa",
+              price: "GRATUITO",
+              onlineLink: "https://docs.google.com/forms/d/e/1FAIpQLSeM8V44EfcAlwqTVorh9UqXXI2hqNEHbmNst9YZqLwz1WlhBw/viewform?usp=send_form",
+              onSite: false,
+              reserveOnly: true,
+            },
+            {
+              type: "Iscrizione Hotlap F1",
+              price: "GRATUITO",
+              onlineLink: "https://docs.google.com/forms/d/e/1FAIpQLSeM8V44EfcAlwqTVorh9UqXXI2hqNEHbmNst9YZqLwz1WlhBw/viewform?usp=send_form",
+              onSite: false,
+              reserveOnly: true,
+            }
+          ]
+        },
+        
       ],
 
   
@@ -178,10 +206,12 @@ export const eventData = {
       day: "Venerdì 14",
       events: [
         { time: "18:00", title: "Apertura Fiera", location: "Ingresso Principale", indic: "Inizio Serata"},
+        { time: "18:00 - 23:00", title: "Area Food", location: "Piazza Cesare Battisti", indic: "Area dove poter mangiare e bere"},
         { time: "18:00 - 23:00", title: "Ludoteca con Ludimus, Busaplay e Othello", location: "Piazza Cesare Battisti", indic: "Ludoteca e giochi da tavolo in compagnia, organizzato da Ludimus, Busaplay e Othello." },
         { time: "18:00 - 23:00", title: "Magic e TCG con LabTale", location: "Piazza Cesare Battisti", indic: "Tavoli dimostrativi e prova gratuita di numerosi giochi di carte.",
           references: [
             { title: "Vedi Torneo di Sabato", targetEventId: "torneo-pauper" },
+            { title: "Vedi Torneo di Domenica", targetEventId: "torneo-commander"},
           ],
         },
         { time: "18:00 - 23:00", title: "DJ Set con DJ Giuspe", location: "Piazza Cesare Battisti", indic: "DJ Set in Piazza Cesare Battisti con DJ Giuspe."  },
@@ -194,6 +224,7 @@ export const eventData = {
         { time: "10:00", title: "Apertura Secondo Giorno", location: "Cortile interno della Rocca", indic: "Apertura dei cancelli della Fiera.",
           references: [],
         },
+        { time: "10:00 - 23:00", title: "Area Food", location: "Piazza Cesare Battisti", indic: "Area dove poter mangiare e bere"},
         { time: "10:00", title: "Mostra Dedicata a PK", location: "Biblioteca Civica", indic: "Dedicata alla serie di Paperinik arriva la mostra \"PK - Meno uno all'alba\"",
           references: [],
         },
@@ -202,6 +233,7 @@ export const eventData = {
           references: [
             { title: "Iscrizione Torneo Mario Kart", url: "#" },
             { title: "Iscrizione Torneo Fifa", url: "#" },
+            { title: "Hotlap al simulatore F1", url: "#"},
           ],
         },
         { time: "10:00 - 19:00", title: "Ludoteca con Ludimus, Busaplay e Othello", location: "Cortile interno Rocca", 
@@ -214,8 +246,8 @@ export const eventData = {
             { title: "Vedi Torneo Pauper", targetEventId: "torneo-pauper" },
           ],
         },
-        { id: "torneo-pauper", time: "11:00", title: "Torneo Commander - Magic", location: "Cortile interno Rocca", 
-          indic: "Torneo Pauper con premiazione - ore 11:00",
+        { id: "torneo-pauper", time: "11:00", title: "Torneo Pauper - Magic", location: "Cortile interno Rocca", 
+          indic: "Torneo Pauper con premiazione - ore 11:00 \n• E' necessario iscriversi in loco",
           references: [
             { title: "Iscrizione Torneo Pauper", url: "#" },
           ],
@@ -246,9 +278,17 @@ export const eventData = {
       day: "Domenica 16",
       events: [
         { time: "10:00", title: "Apertura Terzo Giorno", location: "Cortile interno Rocca", indic: "Apertura dei cancelli della Fiera." },
+        { time: "10:00 - 17:30", title: "Area Food", location: "Piazza Cesare Battisti", indic: "Area dove poter mangiare e bere"},
         { time: "10:00 - 17:30", title: "Ludoteca con Ludimus e Busaplay", location: "Cortile interno Rocca", indic: "Giochi da tavolo in compagnia." },
         { time: "10:00 - 17:30", title: "TCG con Pouperwave", location: "Cortile interno Rocca", indic: "Tornei Magic: Ore 11:00 e ore 14:00" },
-        { time: "10:00 - 17:30", title: "Area Gaming con GamersArena", location: "Cortile interno Rocca", indic: "Tornei di Mario Kart e Fifa e Giri nel simulatore F1." },
+        { time: "10:00 - 17:30", title: "Area Gaming con GamersArena", location: "Cortile interno Rocca", 
+          indic: "Tornei di Mario Kart e Fifa e Giri nel simulatore F1.", 
+          references: [
+            { title: "Iscrizione Torneo Mario Kart", url: "#" },
+            { title: "Iscrizione Torneo Fifa", url: "#" },
+            { title: "Hotlap al simulatore F1", url: "#"},
+          ],
+        },
         { time: "10:00", title: "Mostra Dedicata a PK", location: "Cortile interno Rocca", indic: "Dedicata alla serie di Paperinik arriva la mostra \"PK - Meno uno all'alba\"" },
         { time: "11:00 - 14:30", title: "Intervista ad Alessandro Sisti", location: "Biblioteca Civica", indic: "Intervista allo sceneggiatore italiano Alessandro Sisti, l'intervistatore sarà Giacomo Panozzo"},
         { time: "14:30 - 18:00", title: "Dentro La Storia", location: "Sala museo MAG", indic: "Masterclass di sceneggiatura per fumetti con Alessandro Sisti. Iscriviti Subito!!"  },
@@ -267,5 +307,4 @@ export const eventData = {
       ]
     }
   ]
-  
 };
